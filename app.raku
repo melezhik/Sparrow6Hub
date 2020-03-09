@@ -4,7 +4,9 @@ use Cro::WebApp::Template;
 
 my $application = route {
     get -> {
-        template 'templates/main.crotmp', %( plg-cnt => 125 )
+        template 'templates/main.crotmp', %( 
+          plg-cnt => "{%*ENV<HOME>}/sparrow6/index".IO.lines.elems
+        )
     }
 }
 

@@ -1,11 +1,12 @@
 use Cro::HTTP::Router;
 use Cro::HTTP::Server;
 use Cro::WebApp::Template;
+use Hub;
 
 my $application = route {
     get -> {
         template 'templates/main.crotmp', %( 
-          plg-cnt => "{%*ENV<HOME>}/sparrow6/index".IO.lines.elems
+          plg-cnt => plugins-cnt
         )
     }
 }

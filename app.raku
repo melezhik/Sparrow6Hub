@@ -4,11 +4,24 @@ use Cro::WebApp::Template;
 use Hub;
 
 my $application = route {
-    get -> {
-        template 'templates/main.crotmp', %( 
-          plg-cnt => plugins-cnt
-        )
+
+
+    get -> 'search', :$q {
+      my @results = plugins-search($q);
+      template 'templates/search.crotmp', %( 
+        results => @results,
+        plg-cnt => @results.elems,
+        q => $q
+      )
     }
+
+    get -> {
+      template 'templates/main.crotmp', %( 
+        plg-cnt => plugins-cnt
+      )
+    }
+
+
 }
 
 my Cro::Service $service = Cro::HTTP::Server.new:

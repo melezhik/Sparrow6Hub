@@ -1,9 +1,10 @@
 use Cro::HTTP::Router;
 use Cro::HTTP::Server;
+use Cro::WebApp::Template;
 
 my $application = route {
     get -> {
-        content 'text/html', 'Hello Cro!';
+        template 'templates/main.crotmp', %( plg-cnt => 125 )
     }
 }
 

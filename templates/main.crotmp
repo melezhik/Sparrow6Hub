@@ -50,8 +50,7 @@
 export SP6_REPO=http://repo.westus.cloudapp.azure.com
 s6 --index-update
 s6 --install $plg_name
-s6 --plg-run $plg_name
-      </pre>
+s6 --plg-run $plg_name</pre>
     </div>
   </section>    
   </body>

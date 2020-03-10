@@ -17,9 +17,9 @@ my $application = route {
       )
     }
 
-    get -> 'plugins', Str $name, Str $version {
+    get -> 'plugin', Str $name, Str $version {
         my %plg = plugin-deploy($name,$version);
-        say %plg.perl
+        template 'templates/plugin.crotmp', %plg; 
     }
 
     get -> {

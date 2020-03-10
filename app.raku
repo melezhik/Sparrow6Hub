@@ -6,9 +6,9 @@ use Hub;
 my $application = route {
 
 
-    get -> 'search', :$q {
+    get -> 'search', Str :$q {
 
-      my @index = plugins-search($q);
+      my @index = plugins-search($q||"all");
 
       my @results;
 
@@ -21,7 +21,7 @@ my $application = route {
         my $version = @a[1];
 
         push @results, %(
-          num => $i++,
+          num => ++$i,
           name => $name,
           version => $version 
         )

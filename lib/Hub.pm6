@@ -28,8 +28,27 @@ sub plugins-cnt () is export {
 
 }
 
+sub plugin-deploy ( Str $name, Str $version ) is export {
 
-sub plugins-search ( Str $q ) is export {
+
+  if "{cache-root()}/$name/$version".IO !~~ :d {
+    say "deploy {repo-root()}/{$name}-v{$version}.tar.gz ->  {cache-root()}/$name/$version";
+    mkdir "{cache-root()}/$name/";
+    mkdir "{cache-root()}/$name/$version";
+    shell "tar -xzf {repo-root()}/{$name}-v{$version}.tar.gz -C {cache-root()}/$name/$version";
+  }
+  
+  my %meta = from-json("{cache-root()}/$name/$version/sparrow.json".IO.slurp);
+
+  if "{cache-root()}/$name/$version/README.md".IO ~~ :f {
+    %meta<readme> = "{cache-root()}/$name/$version/README.md".IO.slurp
+  }
+
+  return %meta;
+
+}
+
+sub plugin-search ( Str $q ) is export {
 
   my @out;
 
@@ -43,14 +62,7 @@ sub plugins-search ( Str $q ) is export {
       my $name = @a[0];
       my $version = @a[1];
 
-      if "{cache-root()}/$name/$version".IO !~~ :d {
-        say "deploy {repo-root()}/{$name}-v{$version}.tar.gz ->  {cache-root()}/$name/$version";
-        mkdir "{cache-root()}/$name/";
-        mkdir "{cache-root()}/$name/$version";
-        shell "tar -xzf {repo-root()}/{$name}-v{$version}.tar.gz -C {cache-root()}/$name/$version";
-      }
-
-      my %plg-meta = from-json("{cache-root()}/$name/$version/sparrow.json".IO.slurp);
+      my %plg-meta = plugin-deploy($name,$version);
 
       if $q eq 'all' {
         push @out, %(

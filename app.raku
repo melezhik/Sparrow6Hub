@@ -8,13 +8,18 @@ my $application = route {
 
     get -> 'search', Str :$q {
 
-      my @results = plugins-search($q||"all");
+      my @results = plugin-search($q||"all");
 
       template 'templates/search.crotmp', %( 
         results => @results,
         plg-cnt => @results.elems,
         q => $q
       )
+    }
+
+    get -> 'plugins', Str $name, Str $version {
+        my %plg = plugin-deploy($name,$version);
+        say %plg.perl
     }
 
     get -> {

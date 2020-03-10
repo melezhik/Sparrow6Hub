@@ -39,7 +39,7 @@
         <!-- Right side -->
         <div class="level-right">
           <p class="level-item"><strong>Home</strong></p>
-          <p class="level-item"><a href="/hub/search?q=all">All</a></p>
+          <p class="level-item"><a href="/hub/search?q=all">Plugins</a></p>
           <p class="level-item"><a href="https://github.com/melezhik/Sparrow6">GitHub</a></p>
           <p class="level-item"><a href="https://sparrowdo.wordpress.com/">Blog</a></p>
         </div>

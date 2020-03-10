@@ -8,24 +8,7 @@ my $application = route {
 
     get -> 'search', Str :$q {
 
-      my @index = plugins-search($q||"all");
-
-      my @results;
-
-      my $i = 0;
-
-      for @index -> $r {
-        
-        my @a = $r.split(/\s+/);
-        my $name = @a[0];
-        my $version = @a[1];
-
-        push @results, %(
-          num => ++$i,
-          name => $name,
-          version => $version 
-        )
-      }
+      my @results = plugins-search($q||"all");
 
       template 'templates/search.crotmp', %( 
         results => @results,

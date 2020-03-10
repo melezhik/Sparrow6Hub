@@ -62,6 +62,16 @@ sub plugins-search ( Str $q ) is export {
         next;
       }
 
+      if $name ~~ /<$q>/ {
+        push @out, %(
+          name => $name,
+          version => $version,
+          description => %plg-meta<description>,
+          num => ++$num,
+        );
+        next;
+      }
+
       if %plg-meta<description>:exists && %plg-meta<description> ~~ /<$q>/ {
         push @out, %(
           name => $name,
@@ -73,6 +83,16 @@ sub plugins-search ( Str $q ) is export {
       }
 
       if %plg-meta<category>:exists && %plg-meta<category> ~~ /<$q>/ {
+        push @out, %(
+          name => $name,
+          version => $version,
+          description => %plg-meta<description>,
+          num => ++$num,
+        );
+        next;
+      }
+
+      if %plg-meta<url>:exists && %plg-meta<url> ~~ /<$q>/ {
         push @out, %(
           name => $name,
           version => $version,

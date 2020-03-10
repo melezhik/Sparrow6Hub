@@ -44,6 +44,14 @@
           <p class="level-item"><a href="https://sparrowdo.wordpress.com/">Blog</a></p>
         </div>
       </nav>
+      <h1>Welcome to SparrowHub - Repository of Sparrow plugins.</h1>
+      <hr>
+      <pre>zef install --/test Sparrow6
+export SP6_REPO=http://repo.westus.cloudapp.azure.com
+s6 --index-update
+s6 --plg-install $plg_name
+s6 --plg-run $plg_name
+      </pre>
     </div>
   </section>    
   </body>

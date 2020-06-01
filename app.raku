@@ -2,6 +2,7 @@ use Cro::HTTP::Router;
 use Cro::HTTP::Server;
 use Cro::WebApp::Template;
 use Hub;
+use Misc;
 
 my $application = route {
 
@@ -19,6 +20,7 @@ my $application = route {
 
     get -> 'plugin', Str $name, Str $version {
         my %plg = plugin-deploy($name,$version);
+        #%plg<html-doc> = html-doc(%plg<doc-file>); 
         template 'templates/plugin.crotmp', %plg; 
     }
 

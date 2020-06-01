@@ -2,7 +2,6 @@ use v6;
 
 unit module Hub;
 use JSON::Tiny;
-use Text::Markdown;
 
 sub repo-root () {
 
@@ -42,7 +41,8 @@ sub plugin-deploy ( Str $name, Str $version ) is export {
   my %meta = from-json("{cache-root()}/$name/$version/sparrow.json".IO.slurp);
 
   if "{cache-root()}/$name/$version/README.md".IO ~~ :f {
-    %meta<readme> = "{cache-root()}/$name/$version/README.md".IO.slurp
+    %meta<readme> = "{cache-root()}/$name/$version/README.md".IO.slurp;
+    %meta<doc-file> = "{cache-root()}/$name/$version/README.md";
   }
 
   %meta<date> = DateTime.new(

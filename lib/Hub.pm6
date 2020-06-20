@@ -38,11 +38,11 @@ sub plugin-deploy ( Str $name, Str $version ) is export {
     mkdir "{cache-root()}/$name/$version";
     shell "tar -xzf {repo-root()}/{$name}-v{$version}.tar.gz -C {cache-root()}/$name/$version";
 
-    unless "{cache-root()}/$name/$version/README.html".IO ~~ :e {
-      say "generate html doc for {cache-root()}/$name/$version/README.md";
-      my $html = html-doc("{cache-root()}/$name/$version/README.md");
-      spurt "{cache-root()}/$name/$version/README.html", $html;
-    }
+    #unless "{cache-root()}/$name/$version/README.html".IO ~~ :e {
+    #  say "generate html doc for {cache-root()}/$name/$version/README.md";
+    #  my $html = html-doc("{cache-root()}/$name/$version/README.md");
+    #  spurt "{cache-root()}/$name/$version/README.html", $html;
+    #}
 
   }
   
@@ -51,7 +51,7 @@ sub plugin-deploy ( Str $name, Str $version ) is export {
   if "{cache-root()}/$name/$version/README.md".IO ~~ :f {
     %meta<readme> = "{cache-root()}/$name/$version/README.md".IO.slurp;
     %meta<doc-file> = "{cache-root()}/$name/$version/README.md";
-    %meta<readme-html> = "{cache-root()}/$name/$version/README.html".IO.slurp;
+    #%meta<readme-html> = "{cache-root()}/$name/$version/README.html".IO.slurp;
   }
 
   %meta<date> = DateTime.new(

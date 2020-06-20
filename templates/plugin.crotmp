@@ -55,7 +55,7 @@
           </p>
         </div>
         <div class="panel-block">
-            <pre class="control"><.readme></pre>
+            <pre class="control"><&HTML(.readme-html)></pre>
         </div>
       </nav>
     </div>

@@ -6,14 +6,14 @@ use Misc;
 
 sub repo-root () {
 
-  "/usr/share/repo/plugins"
+  "/var/www/html/repo/plugins"
 
 }
 
 
 sub index-file () {
 
-  "/usr/share/repo/api/v1/index"
+  "/var/www/html/repo/api/v1/index"
 
 }
 

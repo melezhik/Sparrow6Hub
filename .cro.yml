@@ -2,3 +2,6 @@ cro: 1
 id: sparrowhub
 name: SparrowHub Repo
 entrypoint: app.raku
+ignore:
+  - repo
+  - .cache

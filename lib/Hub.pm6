@@ -6,14 +6,14 @@ use Misc;
 
 sub repo-root () {
 
-  "/var/www/html/repo/plugins"
+ "{%*ENV<HOME>}/repo/plugins"
 
 }
 
 
 sub index-file () {
 
-  "/var/www/html/repo/api/v1/index"
+  "{%*ENV<HOME>}/repo/api/v1/index"
 
 }
 

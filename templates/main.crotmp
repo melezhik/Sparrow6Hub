@@ -45,8 +45,8 @@
       </nav>
       <h1>SparrowHub is a repository of <a href="https://github.com/melezhik/Sparrow6">Sparrow</a> plugins - small automation utilities written on many languages, but could be
       run as <a href="http://raku.org">Raku</a> functions or command line.
-      To start using plugins one needs just to install Sparrow and set up Sparrow repository:</h1>
-      <pre>zef install --/test Sparrow6
+      To start using plugins one needs just to install Sparrow and set up a Sparrow repository:</h1>
+      <pre>$ zef install --/test Sparrow6
 $ export SP6_REPO=http://sparrowhub.io/repo
 $ s6 --index-update
 $ s6 --plg-run $plg_name</pre>

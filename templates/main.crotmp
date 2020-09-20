@@ -43,13 +43,20 @@
           <p class="level-item"><a href="https://sparrowdo.wordpress.com/">Blog</a></p>
         </div>
       </nav>
-      <h1>SparrowHub is a repository of <a href="https://github.com/melezhik/Sparrow6">Sparrow</a> plugins - small automation utilities written on many languages, but could be
-      run as <a href="http://raku.org">Raku</a> functions or command line.
-      To start using plugins one needs just to install Sparrow and set up a Sparrow repository:</h1>
-      <pre>$ zef install --/test Sparrow6
-$ export SP6_REPO=http://sparrowhub.io/repo
-$ s6 --index-update
-$ s6 --plg-run $plg_name</pre>
+
+      <nav class="panel">
+        <p class="panel-heading">
+          Welcome to SparrowHub
+        </p>                                                                                                                                                                    <div class="panel-block">
+      <div class="panel-block">
+        <p class="control">SparrowHub is a repository of <a href="https://github.com/melezhik/Sparrow6">Sparrow</a> plugins - small automation utilities written on many languages, but could be
+        run as <a href="http://raku.org">Raku</a> functions or command line.
+        To start using plugins one needs just to install Sparrow and set up a Sparrow repository:<br><code>$ zef install --/test Sparrow6<br>
+ $ export SP6_REPO=http://sparrowhub.io/repo<br>
+ $ s6 --index-update<br>
+ $ s6 --plg-run $plg_name</code>
+      </div>
+      </nav>   
     </div>
   </section>    
   </body>

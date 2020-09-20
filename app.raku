@@ -4,8 +4,9 @@ use Cro::WebApp::Template;
 use Hub;
 use Misc;
 
-my $application = route {
+my $theme = "nuclear";
 
+my $application = route {
 
     get -> 'search', Str :$q {
 
@@ -14,19 +15,22 @@ my $application = route {
       template 'templates/search.crotmp', %( 
         results => @results,
         plg-cnt => @results.elems,
-        q => $q
+        q => $q,
+        theme => $theme
       )
     }
 
     get -> 'plugin', Str $name, Str $version {
         my %plg = plugin-deploy($name,$version);
-        #%plg<html-doc> = html-doc(%plg<doc-file>); 
+        #%plg<html-doc> = html-doc(%plg<doc-file>);
+        %plg<theme> = $theme; 
         template 'templates/plugin.crotmp', %plg; 
     }
 
     get -> {
       template 'templates/main.crotmp', %( 
-        plg-cnt => plugins-cnt
+        plg-cnt => plugins-cnt,
+        theme => $theme
       )
     }
 

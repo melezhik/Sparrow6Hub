@@ -86,6 +86,7 @@ sub plugin-search ( Str $q ) is export {
           name => $name,
           version => $version,
           description => %plg-meta<description>,
+          url => %plg-meta<url>,
           num => ++$num,
         );
         next;
@@ -96,6 +97,7 @@ sub plugin-search ( Str $q ) is export {
           name => $name,
           version => $version,
           description => %plg-meta<description>,
+          url => %plg-meta<url>,
           num => ++$num,
         );
         next;
@@ -106,6 +108,7 @@ sub plugin-search ( Str $q ) is export {
           name => $name,
           version => $version,
           description => %plg-meta<description>,
+          url => %plg-meta<url>,
           num => ++$num,
         );
         next;
@@ -116,6 +119,7 @@ sub plugin-search ( Str $q ) is export {
           name => $name,
           version => $version,
           description => %plg-meta<description>,
+          url => %plg-meta<url>,
           num => ++$num,
         );
         next;
@@ -126,6 +130,7 @@ sub plugin-search ( Str $q ) is export {
           name => $name,
           version => $version,
           description => %plg-meta<description>,
+          url => %plg-meta<url>,
           num => ++$num,
         );
         next;

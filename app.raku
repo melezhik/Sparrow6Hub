@@ -34,7 +34,7 @@ my $application = route {
         cache-control :public, :max-age(300);
         static 'repo', @path;
     }
-    
+
 }
 
 my Cro::Service $service = Cro::HTTP::Server.new:

@@ -56,19 +56,21 @@
           </p>
         </div>
         <div class="panel-block">
-            <pre id="markdown" class="control"><.readme></pre>
+            <div class="content"><pre id="markdown"><.readme></pre></div>
         </div>
       </nav>
     </div>
   </section>
   <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
   <script>
+    showdown.setFlavor('github');
     var markdown = document.getElementById("markdown").innerText;
-    var converter = new showdown.Converter({headerLevelStart: 3}),
+    //var converter = new showdown.Converter({headerLevelStart: 1, noHeaderId: true, simpleLineBreaks: true}),
+    var converter = new showdown.Converter({headerLevelStart: 1, omitExtraWLInCodeBlocks: true, simpleLineBreaks: true}),
     text      = markdown,
     html      = converter.makeHtml(text);
-    //alert(html);
-    document.getElementById("markdown").innerHTML = html;
+    // alert(markdown);
+    // document.getElementById("markdown").innerHTML = html;
   </script>
   </body>
 </html>

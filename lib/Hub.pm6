@@ -3,6 +3,7 @@ use v6;
 unit module Hub;
 use JSON::Tiny;
 use Misc;
+use YAMLish;
 
 sub repo-root () {
 
@@ -141,3 +142,14 @@ sub plugin-search ( Str $q ) is export {
   return @out;
 }
 
+sub get-webui-conf is export {
+
+  my $conf-file = %*ENV<HOME> ~ '/sparrowhub.yaml';
+
+  my %conf = $conf-file.IO ~~ :f ?? load-yaml($conf-file.IO.slurp) !! Hash.new;
+
+  #warn "rakudist web conf loaded: ", $conf-file;
+
+  %conf;
+
+}

@@ -4,9 +4,19 @@ use Cro::WebApp::Template;
 use Hub;
 use Misc;
 
-my $theme = "cyborg";
-
 my $application = route {
+
+    my %conf = get-webui-conf();
+  
+    my $theme;
+  
+    if %conf<ui> && %conf<ui><theme> {
+      $theme = %conf<ui><theme>
+    } else {
+      $theme = "nuclear";
+    };
+
+    say "ui theme: <$theme> ...";
 
     get -> 'search', Str :$q {
 

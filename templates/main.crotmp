@@ -63,12 +63,12 @@
         </p>                                                                                                                                                                    <div class="panel-block">
         <div class="panel-block">
           <p class="control">
-          To start using Sparrow plugins just install Sparrow6 Raku module and setup Sparrow repository:
-            <br><code>$ zef install --/test Sparrow6<br>
-$ export SP6_REPO=http://sparrowhub.io/repo<br>
-$ s6 --index-update<br>
-$ s6 --plg-run $plg_name
-            </code
+          To start using Sparrow plugins just install Sparrow6 Raku module and setup Sparrow repository:<br>
+            <code>$ zef install --/test Sparrow6<br>
+&nbsp;$ export SP6_REPO=http://sparrowhub.io/repo<br>
+&nbsp;$ s6 --index-update<br>
+&nbsp;$ s6 --plg-run $plg_name
+            </code>
           </p>
         </div>
       </nav>

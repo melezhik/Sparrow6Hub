@@ -51,7 +51,8 @@
           <p class="control">
             <strong>version:</strong>&nbsp;<.version>&nbsp;|&nbsp; 
             <strong>date:</strong>&nbsp;<.date>&nbsp;|&nbsp;
-            <i><.description></i>
+            <i><.description></i>&nbsp;|&nbsp;
+            <a href="<.url>" alt="source code">source code</a>
           </p>
         </div>
         <div class="panel-block">
@@ -63,7 +64,7 @@
   <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
   <script>
     var markdown = document.getElementById("markdown").innerText;
-    var converter = new showdown.Converter({headerLevelStart: 6}),
+    var converter = new showdown.Converter({headerLevelStart: 3}),
     text      = markdown,
     html      = converter.makeHtml(text);
     //alert(html);

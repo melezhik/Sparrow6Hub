@@ -140,3 +140,4 @@ sub plugin-search ( Str $q ) is export {
 
   return @out;
 }
+

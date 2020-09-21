@@ -4,7 +4,7 @@ use Cro::WebApp::Template;
 use Hub;
 use Misc;
 
-my $theme = "nuclear";
+my $theme = "cyborg";
 
 my $application = route {
 

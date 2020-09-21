@@ -65,8 +65,8 @@
   <script>
     showdown.setFlavor('github');
     var markdown = document.getElementById("markdown").innerText;
-    //var converter = new showdown.Converter({headerLevelStart: 1, noHeaderId: true, simpleLineBreaks: true}),
-    var converter = new showdown.Converter({headerLevelStart: 1, omitExtraWLInCodeBlocks: true, simpleLineBreaks: true}),
+    var converter = new showdown.Converter({headerLevelStart: 1, noHeaderId: true, simpleLineBreaks: true}),
+    // var converter = new showdown.Converter({headerLevelStart: 1, omitExtraWLInCodeBlocks: true, simpleLineBreaks: true}),
     text      = markdown,
     html      = converter.makeHtml(text);
     // alert(markdown);

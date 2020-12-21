@@ -13,7 +13,7 @@ my $application = route {
     if %conf<ui> && %conf<ui><theme> {
       $theme = %conf<ui><theme>
     } else {
-      $theme = "nuclear";
+      $theme = "cyborg";
     };
 
     say "ui theme: <$theme> ...";

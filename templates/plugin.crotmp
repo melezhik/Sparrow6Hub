@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SparrowHub - Sparrow Plugins Repository</title>
     <link rel="stylesheet" href="https://jenil.github.io/bulmaswatch/<.theme>/bulmaswatch.min.css">                                                                          <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>                                                                          <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.0.4/markdown-it.min.js" integrity="sha512-0DkA2RqFvfXBVeti0R1l0E8oMkmY0X+bAA2i02Ld8xhpjpvqORUcE/UBe+0KOPzi5iNah0aBpW6uaNNrqCk73Q==" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
   </head>
   <body>
-
-  <section class="section">
+    <section class="section">
     <div class="container">
       <!-- Main container -->
       <nav class="level">
@@ -56,21 +56,24 @@
           </p>
         </div>
         <div class="panel-block">
-            <div class="content"><pre id="markdown"><.readme></pre></div>
+         <div class="content" id="doc" ><pre id="markdown"><.readme></pre></div>
         </div>
       </nav>
     </div>
   </section>
-  <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
   <script>
-    showdown.setFlavor('github');
     var markdown = document.getElementById("markdown").innerText;
-    var converter = new showdown.Converter({headerLevelStart: 1, noHeaderId: true, simpleLineBreaks: true}),
-    // var converter = new showdown.Converter({headerLevelStart: 1, omitExtraWLInCodeBlocks: true, simpleLineBreaks: true}),
-    text      = markdown,
-    html      = converter.makeHtml(text);
-    // alert(markdown);
-    // document.getElementById("markdown").innerHTML = html;
+    // alert(markdown)
+    var md = window.markdownit({
+      html: false,
+      breaks: true,
+      linkify: true,
+      typographer: true
+    });;
+    var html = md.render(markdown);
+    // alert(html);
+    document.getElementById("markdown").innerHTML = "";
+    document.getElementById("doc").innerHTML = html;
   </script>
   </body>
 </html>

@@ -65,22 +65,16 @@
           Quick start
         </p>
         <div class="panel-block">
-            <pre><code class="language-bash">
-# Command line API
+            <pre><code class="language-bash"># Command line API
 zef install --/test Sparrow6
 export SP6_REPO=http://sparrowhub.io/repo
 s6 --index-update
-s6 --plg-run $plg_name@param1=value1,param2=value2
-            </code></pre>
-        </div>
-        <div class="panel-block">
-            <pre><code class="language-perl">
-# Raku API
+s6 --plg-run $plg_name@param1=value1,param2=value2</code></pre>
+            <pre><code class="language-perl"># Raku API
 my %state = task-run "desc", "plg-name", %(
   param1  => "value1",
   param2  => "value2",
-);
-            </code></pre>
+);</code></pre>
         </div>
       </nav>
 

@@ -45,6 +45,14 @@ my $application = route {
     }
 
     get -> 'repo', *@path {
+        my $allow = False;
+        for request.headers {
+            $allow = True if .name eq "User-Agent" and .value ~~ /^^ 'curl' \S*/;
+        }
+        unless $allow {
+          warn "not allowed";
+          return bad-request();
+        }
         cache-control :public, :max-age(300);
         static 'repo', @path;
     }

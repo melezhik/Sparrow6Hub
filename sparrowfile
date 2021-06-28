@@ -1,0 +1,4 @@
+use Sparrow6::DSL;
+zef "cro", %( notest => True );
+zef "Cro::HTTP::Router", %( notest => True );
+zef "Cro::WebApp::Template", %( notest => True );

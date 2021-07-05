@@ -84,23 +84,18 @@ my %state = task-run "desc", "plg-name", %(
         </p>                                                                                                                                                                    <div class="panel-block">
         <div class="panel-block">
             <p class="control">
-              <strong>07/04/2021</strong> - Write devopsish tests using Tomty and Raku.
-              Dev.to <a href="https://dev.to/melezhik/write-devopsish-tests-using-tomty-and-raku-2fl2">post</a>
+              <a href="https://dev.to/melezhik/write-devopsish-tests-using-tomty-and-raku-2fl2">07/04/2021</a> - Write devopsish tests using Tomty and Raku.
               &nbsp;|&nbsp;
-              <strong>12/15/2020</strong> - Sparky on k8s cluster.
-              sparrowdo.wordpress.com <a href="https://sparrowdo.wordpress.com/2020/12/15/sparky-on-k8s-cluster/">post</a>
+              <a href="https://sparrowdo.wordpress.com/2020/12/15/sparky-on-k8s-cluster/">12/15/2020</a> - Sparky on k8s cluster.
               &nbsp;|&nbsp;
-              <strong>11/10/2020</strong> - Sparrowdo - Ubiquitous Asynchronous Task Runner ( with Nice Frontend ).
-              Dev.to <a href="https://dev.to/melezhik/sparrowdo-ubiquitous-asynchronous-task-runner-with-nice-frontend-5c1k">post</a>
+              <a href="https://raku-advent.blog/2020/12/07/mixing-bash-and-raku-using-sparrow/">12/07/2020</a> - Day 7: Mixing Bash and Raku Using Sparrow
+              <a href="https://dev.to/melezhik/sparrowdo-ubiquitous-asynchronous-task-runner-with-nice-frontend-5c1k">11/10/2020</a> - Sparrowdo - Ubiquitous Asynchronous Task Runner ( with Nice Frontend ).
               &nbsp;|&nbsp;
-              <strong>10/05/2020</strong> - Development workflow management using Tomtit. 
-              Dev.to <a href="https://dev.to/melezhik/development-workflow-management-using-tomtit-44m4">post</a>
+              <a href="https://dev.to/melezhik/development-workflow-management-using-tomtit-44m4">10/05/2020</a> - Development workflow management using Tomtit. 
               &nbsp;|&nbsp;
-              <strong>09/28/2020</strong> - Sparrowhub.io - repository of devops and automation utilities.<br>
-              Dev.to <a href="https://dev.to/melezhik/sparrowhub-io-repository-of-devops-and-automation-utilities-4mk8">post</a>
+              <a href="https://dev.to/melezhik/sparrowhub-io-repository-of-devops-and-automation-utilities-4mk8">09/28/2020</a> - Sparrowhub.io - repository of devops and automation utilities.<br>
               &nbsp;|&nbsp;
-              <strong>12/24/2019</strong> - Simple blackbox testing with Raku and Sparrow6Simple blackbox testing with Raku and Sparrow6<br>
-              Dev.to <a href="https://dev.to/melezhik/simple-blackbox-testing-with-raku-and-sparrow6-g32">post</a>
+              <a href="https://dev.to/melezhik/simple-blackbox-testing-with-raku-and-sparrow6-g32">12/24/2019</a> - Simple blackbox testing with Raku and Sparrow6Simple blackbox testing with Raku and Sparrow6<br>
             </p>
         </div>
       </nav>

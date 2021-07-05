@@ -84,6 +84,9 @@ my %state = task-run "desc", "plg-name", %(
         </p>                                                                                                                                                                    <div class="panel-block">
         <div class="panel-block">
             <p class="control">
+              <strong>07/04/2021</strong> - Write devopsish tests using Tomty and Raku.
+              dev.to <a href="https://dev.to/melezhik/write-devopsish-tests-using-tomty-and-raku-2fl2">post</a>
+              &nbsp;|&nbsp;
               <strong>12/15/2020</strong> - Sparky on k8s cluster.
               sparrowdo.wordpress.com <a href="https://sparrowdo.wordpress.com/2020/12/15/sparky-on-k8s-cluster/">post</a>
               &nbsp;|&nbsp;

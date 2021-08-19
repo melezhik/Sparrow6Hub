@@ -25,7 +25,7 @@
                 <a class="nav-link" href="https://github.com/melezhik/Sparrow6">GitHub</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="https://sparrowdo.wordpress.com/">Blog</a>
+                <a class="nav-link" href="https://dev.to/melezhik/">Blog</a>
               </li>
             <form class="d-flex" action="/search" method=GET>
               <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search" name="q" value=<.q>>

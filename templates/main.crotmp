@@ -97,7 +97,7 @@ my %state = task-run "desc", "plg-name", %(
               <a href="https://dev.to/melezhik/sparrowdo-ubiquitous-asynchronous-task-runner-with-nice-frontend-5c1k">11/10/2020</a> - Sparrowdo - Ubiquitous Asynchronous Task Runner ( with Nice Frontend ).
               <a href="https://dev.to/melezhik/development-workflow-management-using-tomtit-44m4">10/05/2020</a> - Development workflow management using Tomtit. 
               <a href="https://dev.to/melezhik/sparrowhub-io-repository-of-devops-and-automation-utilities-4mk8">09/28/2020</a> - Sparrowhub.io - repository of devops and automation utilities.
-              <a href="https://dev.to/melezhik/simple-blackbox-testing-with-raku-and-sparrow6-g32">12/24/2019</a> - Simple blackbox testing with Raku and Sparrow6Simple blackbox testing with Raku and Sparrow6
+              <a href="https://dev.to/melezhik/simple-blackbox-testing-with-raku-and-sparrow6-g32">12/24/2019</a> - Simple blackbox testing with Raku and Sparrow6
             </p>
         </div>
       </nav>

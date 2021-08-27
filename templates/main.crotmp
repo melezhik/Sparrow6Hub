@@ -12,6 +12,7 @@
   </head>
   <body>
 
+  <script src="js/misc.js"></script>
   <section class="section">
     <div class="container">
       <!-- Main container -->
@@ -55,27 +56,135 @@
           <p class="control">
             SparrowHub is a repository of <a href="https://github.com/melezhik/Sparrow6">Sparrow</a> plugins - small automation utilities written on many languages, but could be
             run as <a href="http://raku.org">Raku</a> functions or command line.
-            To start using plugins one needs just to install Sparrow and set up a Sparrow repository.
+            To start using plugins one needs just to install Sparrow and set up a Sparrow repository
           </p>
         </div>
       </nav>
 
       <nav class="panel">
         <p class="panel-heading">
-          Quick start
-        </p>
+          Installation
+        </p>                                                                                                                                                                    <div class="panel-block">
         <div class="panel-block">
-            <pre><code class="language-bash"># Command line API
-zef install --/test Sparrow6
-export SP6_REPO=http://sparrowhub.io/repo
-s6 --index-update
-s6 --plg-run $plg_name@param1=value1,param2=value2</code></pre>
-            <pre><code class="language-perl"># Raku API
-my %state = task-run "desc", "plg-name", %(
-  param1  => "value1",
-  param2  => "value2",
-);</code></pre>
+          <pre><code class="language-bash">zef install --/test Sparrow6
+export SP6_REPO=http://sparrowhub.io/repo</code></pre>
         </div>
+      </nav>
+
+      <nav class="panel">
+        <p class="panel-heading">
+            Raku Plugins for daily @work
+        </p>
+        
+        <div class="panel-block">
+              <nav class="tabs is-boxed is-fullwidth">
+                <div class="container">
+                  <ul>
+                    <li class="tab is-active" onclick="openTab(event,'DevOps')"><a >DevOps</a></li>
+                    <li class="tab" onclick="openTab(event,'K8s')"><a >Kubernetes</a></li>
+                    <li class="tab" onclick="openTab(event,'Azure')"><a >Azure</a></li>
+                    <li class="tab" onclick="openTab(event,'Development')"><a >Development</a></li>
+                  </ul>
+                </div>
+              </nav>
+        </div>
+
+        <div class="panel-block">
+          <p>
+            <div class="container section">
+
+              <div id="DevOps" class="content-tab">
+                <p>
+  Set up Git<pre><code>task-run "set git", "git-base", %(
+  email => 'melezhik@gmail.com',
+  name  => 'Alexey Melezhik',
+  config_scope => 'local',
+  set_credential_cache => 'on'
+);</code></pre><br>
+  Run GitLab Pipeline<pre><code>task-run "pipe-run", "gitlab-run-pipeline", %(
+  debug => True,
+  project => 1001,
+  gitlab_api => "https://git.company.com/api/v4/",
+  variables => %(
+    color => "green",
+    size => "big",
+    use_salt => True
+  )
+)</code></pre>
+                </p>
+              </div>
+
+              <div id="K8s" class="content-tab" style="display:none">
+                <p>
+  Test if a k8s deployment exists and has attributes<pre><code>task-run "dpl check", "k8s-deployment-check" %(
+  name => "animals",
+  namespace => "pets",
+  cat => %(
+    command => "/usr/bin/cat",
+    args => [
+      "eat", "milk", "fish" 
+    ],
+    env => [
+      "ENABLE_LOGGING"
+    ]
+    volume-mounts => {
+      foo-bar => "/opt/foo/bar",
+    }
+  )
+);</code></pre><br>
+  Test if k8s config map exists and has entries<pre><code>task-run "cm check", "k8s-config-check", %(
+  type => "configmap",
+  name => "web-config",
+  namespace => "dashboards",
+  # check if we have admin and password entries 
+  # in config map
+  data => [
+    "note: creds for login",
+    "[admin=root]",
+    'regexp: "[password=" \S+ "]" $$',
+  ]
+);</code></pre>
+                </p>
+              </div>
+
+              <div id="Azure" class="content-tab">
+                <p>
+    Check that Azure KV secrets exists<pre><code>task-run "check secrets", "azure-kv-secrets-check", %(
+  name => "kv100", # the name of keyvault
+  exists => [ # these keys should exists
+    'password1',
+    'password2',
+    'db-password1',
+    'db-password2'
+  ]
+)</code></pre><br>
+  Calculate permission number for Azure Devops permissions<pre><code>task-run "permissions sum", "ado-permissions-calculator", %(
+  namespace => "Library",
+  actions => qqw{View Create}
+);</code></pre>
+                </p>
+              </div>
+
+              <div id="Development" class="content-tab" style="display:none">
+                <p>
+  Clean up python cache files<pre><code>task-run "clean-cache", "python-helpers", %(
+  task => "clean-cache",
+  dir => [ "{%*ENV<HOME>}/.local", '/tmp/foo/' ]
+)</code></pre><br>
+  Lint yaml files<pre><code>task-run "lint these files", "yaml-lint", %(
+  files => "path/to/dir/*.yaml",
+  use_python => False
+);</code></pre>
+                </p>
+              </div>
+
+
+            </div>
+
+          </p>
+
+        </div>
+
       </nav>
 
       <nav class="panel">

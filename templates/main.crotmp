@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SparrowHub - Sparrow Plugins Repository</title>
+    <title>SparrowHub - Raku Plugins for daily $work</title>
     <link rel="stylesheet" href="https://jenil.github.io/bulmaswatch/<.theme>/bulmaswatch.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css">
@@ -50,7 +50,7 @@
 
       <nav class="panel">
         <p class="panel-heading">
-          Welcome to SparrowHub
+          Welcome to SparrowHub - Raku plugins for daily $work
         </p>                                                                                                                                                                    <div class="panel-block">
         <div class="panel-block">
           <p class="control">
@@ -59,7 +59,7 @@
             <span class="icon"><i class="fas fas fa-check-square"></i></span>Plugins could be written on many languages but for end user they are Raku tasks<br>
             <span class="icon"><i class="fas fas fa-check-square"></i></span><a href="https://raku.org" target="_blank">Raku</a> is a modern and powerful language. Sparrow makes it possible to integrate your code written on many other languages
           into Raku scenarios<br>
-            <span class="icon"><i class="fas fas fa-check-square"></i></span>Sparrow is you number one helper with daily automation tasks, it's super flexible and fun to use. Try it out! (See example bellow)
+            <span class="icon"><i class="fas fas fa-check-square"></i></span>Sparrow is you number one helper with daily automation tasks, it's super flexible and fun to use. Try it out! (See examples bellow)
         </p>
         </div>
       </nav>
@@ -76,7 +76,7 @@ export SP6_REPO=http://sparrowhub.io/repo</code></pre>
 
       <nav class="panel">
         <p class="panel-heading">
-            Raku Plugins for daily @work
+            Raku plugins for daily $work
         </p>
         
         <div class="panel-block">

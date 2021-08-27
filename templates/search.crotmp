@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SparrowHub - Sparrow Plugins Repository</title>
+    <title>SparrowHub - Raku Plugins for daily $work</title>
     <link rel="stylesheet" href="https://jenil.github.io/bulmaswatch/<.theme>/bulmaswatch.min.css">                                                                          <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
   </head>

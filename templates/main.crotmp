@@ -80,7 +80,8 @@ export SP6_REPO=http://sparrowhub.io/repo</code></pre>
               <nav class="tabs is-boxed is-fullwidth">
                 <div class="container">
                   <ul>
-                    <li class="tab is-active" onclick="openTab(event,'DevOps')"><a >DevOps</a></li>
+                    <li class="tab is-active" onclick="openTab(event,'Git')"><a >Git</a></li>
+                    <li class="tab" onclick="openTab(event,'CICD')"><a >CICD</a></li>
                     <li class="tab" onclick="openTab(event,'K8s')"><a >Kubernetes</a></li>
                     <li class="tab" onclick="openTab(event,'Azure')"><a >Azure</a></li>
                     <li class="tab" onclick="openTab(event,'Development')"><a >Development</a></li>
@@ -93,13 +94,35 @@ export SP6_REPO=http://sparrowhub.io/repo</code></pre>
           <p>
             <div class="container section">
 
-              <div id="DevOps" class="content-tab">
+              <div id="Git" class="content-tab">
                 <p>
   Set up Git<pre><code>task-run "set git", "git-base", %(
   email => 'melezhik@gmail.com',
   name  => 'Alexey Melezhik',
   config_scope => 'local',
   set_credential_cache => 'on'
+);</code></pre><br>
+  List total commits by author (sorted by commit count)<pre><code>my %state = task-run "commits-by-authors", "git-commits-by-author";
+
+for %state%&lt;list&gt;&lt;&gt; -> $i {
+  say "author: ",$i<author>, "commits: ", $i<commits>, "email: ", $i<email>
+}</code></pre>
+                </p>
+              </div>
+
+
+              <div id="CICD" class="content-tab">
+                <p>
+  Aueue Azure DevOps build and wait till it finishes<pre><code>my %state = task_run "run my build", "ado-pipeline-build", %(
+  name => "WebApp",
+  variables => "foo:1 bar:2"
+  action => "run"
+);
+
+# wait till the my  build finishes
+task_run "wait my build", "ado-pipeline-build", %(
+  action => "wait",
+  build_id => %state&lt;build_id&gt;
 );</code></pre><br>
   Run GitLab Pipeline<pre><code>task-run "pipe-run", "gitlab-run-pipeline", %(
   debug => True,
@@ -167,14 +190,14 @@ export SP6_REPO=http://sparrowhub.io/repo</code></pre>
 
               <div id="Development" class="content-tab" style="display:none">
                 <p>
-  Clean up python cache files<pre><code>task-run "clean-cache", "python-helpers", %(
-  task => "clean-cache",
-  dir => [ "{%*ENV<HOME>}/.local", '/tmp/foo/' ]
-)</code></pre><br>
   Lint yaml files<pre><code>task-run "lint these files", "yaml-lint", %(
   files => "path/to/dir/*.yaml",
   use_python => False
-);</code></pre>
+);</code></pre><br>
+  Clean up python cache files<pre><code>task-run "clean-cache", "python-helpers", %(
+  task => "clean-cache",
+  dir => [ "{%*ENV<HOME>}/.local", '/tmp/foo/' ]
+)</code></pre>
                 </p>
               </div>
 

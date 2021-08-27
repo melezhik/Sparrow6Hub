@@ -114,7 +114,7 @@ for %state%&lt;list&gt;&lt;&gt; -> $i {
               </div>
 
 
-              <div id="CICD" class="content-tab">
+              <div id="CICD" class="content-tab" style="display:none">
                 <p>
   Aueue Azure DevOps build and wait till it finishes<pre><code>my %state = task_run "run my build", "ado-pipeline-build", %(
   name => "WebApp",
@@ -173,7 +173,7 @@ task_run "wait my build", "ado-pipeline-build", %(
                 </p>
               </div>
 
-              <div id="Azure" class="content-tab">
+              <div id="Azure" class="content-tab" style="display:none">
                 <p>
     Check that Azure KV secrets exists<pre><code>task-run "check secrets", "azure-kv-secrets-check", %(
   name => "kv100", # the name of keyvault

@@ -54,10 +54,13 @@
         </p>                                                                                                                                                                    <div class="panel-block">
         <div class="panel-block">
           <p class="control">
-            SparrowHub is a repository of <a href="https://github.com/melezhik/Sparrow6">Sparrow</a> plugins - small automation utilities written on many languages, but could be
-            run as <a href="http://raku.org">Raku</a> functions or command line.
-            To start using plugins one needs just to install Sparrow and set up a Sparrow repository
-          </p>
+            <span class="icon"><i class="fas fas fa-check-square"></i></span> SparrowHub is a repository of Raku plugins - small automation utilities get run as Raku functions<br>
+            <span class="icon"><i class="fas fas fa-check-square"></i></span><a href="https://github.com/melezhik/Sparrow6" target="_blank">Sparrow</a> is an automation engine that runs the plugins<br>
+            <span class="icon"><i class="fas fas fa-check-square"></i></span>Plugins could be written on many languages but for end user they are Raku tasks<br>
+            <span class="icon"><i class="fas fas fa-check-square"></i></span><a href="https://raku.org" target="_blank">Raku</a> is a modern and powerful language. Sparrow makes it possible to integrate your code written on many other languages
+          into Raku scenarios<br>
+            <span class="icon"><i class="fas fas fa-check-square"></i></span>Sparrow is you number one helper with daily automation tasks, it's super flexible and fun to use. Try it out! (See example bellow)
+        </p>
         </div>
       </nav>
 

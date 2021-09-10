@@ -3,6 +3,7 @@ use Cro::HTTP::Server;
 use Cro::WebApp::Template;
 use Hub;
 use Misc;
+use Cro::HTTP::Client;
 
 my $application = route {
 
@@ -62,6 +63,30 @@ my $application = route {
         static 'js', @path;
     }
 
+    get -> 'login', {
+
+      redirect :permanent, "https://github.com/login/oauth/authorize?client_id={%*ENV<OAUTH_CLIENT_ID>}&state={%*ENV<OAUTH_STATE>}"
+
+    }
+
+
+    get -> 'oauth2', :$state, :$code {
+
+      my $resp = await Cro::HTTP::Client.get: 'https://github.com/login/oauth/access_token',
+        query => { 
+          redirect_uri => "https://sparrowhub.io/oauth2",
+          client_id => %*ENV<OAUTH_CLIENT_ID>,
+          client_secret => %*ENV<OAUTH_CLIENT_SECRET>,
+          code => $code,
+          state => $state,    
+        };
+
+      my $data = await $resp.body-text();
+      template 'templates/oauth2.crotmp', %( 
+        resp => "authenticated ok",
+      );
+      
+    } 
 }
 
 my Cro::Service $service = Cro::HTTP::Server.new:

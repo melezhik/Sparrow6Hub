@@ -4,6 +4,7 @@ use Cro::WebApp::Template;
 use Hub;
 use Misc;
 use Cro::HTTP::Client;
+use JSON::Tiny;
 
 my $application = route {
 
@@ -46,16 +47,25 @@ my $application = route {
     }
 
     get -> 'repo', *@path {
+
         my $allow = False;
+
         for request.headers {
             $allow = True if .name eq "User-Agent" and .value ~~ /^^ 'curl' \S*/;
         }
-        unless $allow {
+
+        if $allow {
+          cache-control :public, :max-age(300);
+          static 'repo', @path;
+
+        } else { 
+
+          #return bad-request();
           warn "not allowed";
-          return bad-request();
+          redirect :permanent, "/";
+
         }
-        cache-control :public, :max-age(300);
-        static 'repo', @path;
+
     }
 
     get -> 'js', *@path {
@@ -73,6 +83,9 @@ my $application = route {
     get -> 'oauth2', :$state, :$code {
 
       my $resp = await Cro::HTTP::Client.get: 'https://github.com/login/oauth/access_token',
+        headers => [
+          "Accept" => "application/json"
+        ],
         query => { 
           redirect_uri => "https://sparrowhub.io/oauth2",
           client_id => %*ENV<OAUTH_CLIENT_ID>,
@@ -82,10 +95,11 @@ my $application = route {
         };
 
       my $data = await $resp.body-text();
-      template 'templates/oauth2.crotmp', %( 
-        resp => "authenticated ok",
-      );
-      
+
+      my %data = from-json($data);
+
+      redirect :permanent, "/?authenitcated={%data<access_token>:exists}";
+       
     } 
 }
 

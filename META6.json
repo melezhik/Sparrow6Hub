@@ -1,0 +1,29 @@
+{
+  "auth": "zef:melezhik",
+  "authors" : [
+    "Alexey Melezhik"
+  ],
+  "build-depends" : [ ],
+  "depends" : [
+    "YAMLish",
+    "JSON::Tiny"
+  ],
+  "description" : "SparrowHub Repository",
+  "license" : "Artistic-2.0",
+  "name" : "SparrowHub",
+  "perl" : "6.*",
+  "provides" : {
+    "Hub" : "lib/Hub.rakumod",
+    "Misc" : "lib/Misc.rakumod"
+  },
+  "resources" : [ ],
+  "source-type" : "git",
+  "source-url" : "https://github.com/melezhik/Sparrow6Hub.git",
+  "support" : {
+    "bugtracker" : "https://github.com/melezhik/Sparrow6Hub/issues",
+    "source" : "https://github.com/melezhik/SparrowHub.git"
+  },
+  "tags" : [ ],
+  "test-depends" : [ ],
+  "version" : "0.0.1"
+}

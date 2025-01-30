@@ -219,9 +219,10 @@ task_run "wait my build", "ado-pipeline-build", %(
         </p>                                                                                                                                                                    <div class="panel-block">
         <div class="panel-block">
             <p class="control">
+              <a href="https://dev.to/melezhik/validating-config-files-with-raku-and-sparrow-taskcheck-dsl-1ekp">01/30/2025</a> - Validating configuration files with Raku and Sparrow Task::Check DSL
               <a href="https://dev.to/melezhik/useful-terminal-plugins-to-build-golang-code-gj0">24/01/2025</a> - Useful terminal plugins to build golang code 
               <a href="https://dev.to/melezhik/simple-find-in-source-code-with-tomtit-and-sparrow-312">23/01/2025</a> - Simple search in source code with Tomtit and Sparrow
-              <a href="https://dev.to/melezhik/developing-a-simple-sparrow-plugin-with-raku-and-bash-51g0">20/01/2015</a> - Developing a simple Sparrow plugin with Raku and Bash
+              <a href="https://dev.to/melezhik/developing-a-simple-sparrow-plugin-with-raku-and-bash-51g0">20/01/2025</a> - Developing a simple Sparrow plugin with Raku and Bash
               <a href="https://dev.to/melezhik/go-pipelines-with-raku-interfaces-j7o">05/11/2024</a> - Go pipelines with Raku interfaces
               <a href="https://dev.to/melezhik/oh-my-tomtit-alternative-to-oh-my-zshell-written-on-raku-4oc5">08/19/2021</a> - Oh my Tomtit - alternative to oh my zsh written on Raku 
               <a href="https://dev.to/melezhik/sparrow-plugin-to-run-gitlab-pipelines-programmatically-5113">08/16/2021</a> - Sparrow plugin to run gitlab pipelines programmatically 

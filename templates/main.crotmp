@@ -219,6 +219,7 @@ task_run "wait my build", "ado-pipeline-build", %(
         </p>                                                                                                                                                                    <div class="panel-block">
         <div class="panel-block">
             <p class="control">
+              <a href="https://sparrowdo.wordpress.com/2025/02/03/sparrow-whirl-of-generators/">03/02/2025</a> - Sparrow – whirl of generators
               <a href="https://dev.to/melezhik/validating-config-files-with-raku-and-sparrow-taskcheck-dsl-1ekp">01/30/2025</a> - Validating configuration files with Raku and Sparrow Task::Check DSL
               <a href="https://dev.to/melezhik/useful-terminal-plugins-to-build-golang-code-gj0">24/01/2025</a> - Useful terminal plugins to build golang code 
               <a href="https://dev.to/melezhik/simple-find-in-source-code-with-tomtit-and-sparrow-312">23/01/2025</a> - Simple search in source code with Tomtit and Sparrow

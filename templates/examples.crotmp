@@ -82,7 +82,7 @@
 );</code></pre><br>
   List total commits by author (sorted by commit count)<pre><code>my %state = task-run "commits-by-authors", "git-commits-by-author";
 
-for %state%&lt;list&gt;&lt;&gt; -> $i {
+for %state&lt;list&gt;&lt;&gt; -> $i {
   say "author: ",$i<author>, "commits: ", $i<commits>, "email: ", $i<email>
 }</code></pre>
                 </p>

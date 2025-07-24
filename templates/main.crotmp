@@ -42,175 +42,113 @@
         <!-- Right side -->
         <div class="level-right">
           <p class="level-item"><strong>Home</strong></p>
+          <p class="level-item"><a href="/examples">Examples</a></p>
           <p class="level-item"><a href="/search?q=all">Plugins</a></p>
-          <p class="level-item"><a href="https://github.com/melezhik/Sparrow6">GitHub</a></p>
-          <p class="level-item"><a href="https://dev.to/melezhik/">Blog</a></p>
+          <p class="level-item"><a href="https://github.com/melezhik/Sparrow6">Source</a></p>
+          <p class="level-item"><a href="https://sparrowdo.wordpress.com">Blog</a></p>
         </div>
       </nav>
 
       <nav class="panel">
         <p class="panel-heading">
-          Welcome to SparrowHub - Raku plugins for daily $work
+          Sparrow - Raku Automation Framework
         </p>                                                                                                                                                                    <div class="panel-block">
         <div class="panel-block">
           <p class="control">
-            <span class="icon"><i class="fas fas fa-check-square"></i></span> SparrowHub is a repository of Raku plugins - small automation utilities get run as Raku functions<br>
-            <span class="icon"><i class="fas fas fa-check-square"></i></span><a href="https://github.com/melezhik/Sparrow6" target="_blank">Sparrow</a> is an automation engine that runs the plugins<br>
-            <span class="icon"><i class="fas fas fa-check-square"></i></span>Plugins could be written on many languages but for end user they are Raku tasks<br>
-            <span class="icon"><i class="fas fas fa-check-square"></i></span><a href="https://raku.org" target="_blank">Raku</a> is a modern and powerful language. Sparrow makes it possible to integrate your code written on many other languages
-          into Raku scenarios<br>
-            <span class="icon"><i class="fas fas fa-check-square"></i></span>Sparrow is you number one helper with daily automation tasks, it's super flexible and fun to use. Try it out! (See examples bellow)
-        </p>
-        </div>
-      </nav>
-
-      <nav class="panel">
-        <p class="panel-heading">
-          Installation
-        </p>                                                                                                                                                                    <div class="panel-block">
-        <div class="panel-block">
-          <pre><code class="language-bash">zef install --/test Sparrow6
-export SP6_REPO=http://sparrowhub.io/repo</code></pre>
-        </div>
-      </nav>
-
-      <nav class="panel">
-        <p class="panel-heading">
-            Raku plugins for daily $work
-        </p>
-        
-        <div class="panel-block">
-              <nav class="tabs is-boxed is-fullwidth">
-                <div class="container">
-                  <ul>
-                    <li class="tab is-active" onclick="openTab(event,'Git')"><a >Git</a></li>
-                    <li class="tab" onclick="openTab(event,'CICD')"><a >CICD</a></li>
-                    <li class="tab" onclick="openTab(event,'K8s')"><a >Kubernetes</a></li>
-                    <li class="tab" onclick="openTab(event,'Azure')"><a >Azure</a></li>
-                    <li class="tab" onclick="openTab(event,'Development')"><a >Development</a></li>
-                  </ul>
-                </div>
-              </nav>
-        </div>
-
-        <div class="panel-block">
-          <p>
-            <div class="container section">
-
-              <div id="Git" class="content-tab">
-                <p>
-  Set up Git<pre><code>task-run "set git", "git-base", %(
-  email => 'melezhik@gmail.com',
-  name  => 'Alexey Melezhik',
-  config_scope => 'local',
-  set_credential_cache => 'on'
-);</code></pre><br>
-  List total commits by author (sorted by commit count)<pre><code>my %state = task-run "commits-by-authors", "git-commits-by-author";
-
-for %state%&lt;list&gt;&lt;&gt; -> $i {
-  say "author: ",$i<author>, "commits: ", $i<commits>, "email: ", $i<email>
-}</code></pre>
-                </p>
-              </div>
-
-
-              <div id="CICD" class="content-tab" style="display:none">
-                <p>
-  Aueue Azure DevOps build and wait till it finishes<pre><code>my %state = task_run "run my build", "ado-pipeline-build", %(
-  name => "WebApp",
-  variables => "foo:1 bar:2"
-  action => "run"
-);
-
-# wait till the my  build finishes
-task_run "wait my build", "ado-pipeline-build", %(
-  action => "wait",
-  build_id => %state&lt;build_id&gt;
-);</code></pre><br>
-  Run GitLab Pipeline<pre><code>task-run "pipe-run", "gitlab-run-pipeline", %(
-  debug => True,
-  project => 1001,
-  gitlab_api => "https://git.company.com/api/v4/",
-  variables => %(
-    color => "green",
-    size => "big",
-    use_salt => True
-  )
-)</code></pre>
-                </p>
-              </div>
-
-              <div id="K8s" class="content-tab" style="display:none">
-                <p>
-  Test if a k8s deployment exists and has attributes<pre><code>task-run "dpl check", "k8s-deployment-check" %(
-  name => "animals",
-  namespace => "pets",
-  cat => %(
-    command => "/usr/bin/cat",
-    args => [
-      "eat", "milk", "fish" 
-    ],
-    env => [
-      "ENABLE_LOGGING"
-    ]
-    volume-mounts => {
-      foo-bar => "/opt/foo/bar",
-    }
-  )
-);</code></pre><br>
-  Test if k8s config map exists and has entries<pre><code>task-run "cm check", "k8s-config-check", %(
-  type => "configmap",
-  name => "web-config",
-  namespace => "dashboards",
-  # check if we have admin and password entries 
-  # in config map
-  data => [
-    "note: creds for login",
-    "[admin=root]",
-    'regexp: "[password=" \S+ "]" $$',
-  ]
-);</code></pre>
-                </p>
-              </div>
-
-              <div id="Azure" class="content-tab" style="display:none">
-                <p>
-    Check that Azure KV secrets exists<pre><code>task-run "check secrets", "azure-kv-secrets-check", %(
-  name => "kv100", # the name of keyvault
-  exists => [ # these keys should exists
-    'password1',
-    'password2',
-    'db-password1',
-    'db-password2'
-  ]
-)</code></pre><br>
-  Calculate permission number for Azure Devops permissions<pre><code>task-run "permissions sum", "ado-permissions-calculator", %(
-  namespace => "Library",
-  actions => qqw{View Create}
-);</code></pre>
-                </p>
-              </div>
-
-              <div id="Development" class="content-tab" style="display:none">
-                <p>
-  Lint yaml files<pre><code>task-run "lint these files", "yaml-lint", %(
-  files => "path/to/dir/*.yaml",
-  use_python => False
-);</code></pre><br>
-  Clean up python cache files<pre><code>task-run "clean-cache", "python-helpers", %(
-  task => "clean-cache",
-  dir => [ "{%*ENV<HOME>}/.local", '/tmp/foo/' ]
-)</code></pre>
-                </p>
-              </div>
-
-
-            </div>
-
+            Sparrow is you one for all swiss army knife automation toolkit, useful for devops,
+            data scientists, QA engineers and operations. Check out some quick start <a href="/examples">examples</a>
           </p>
-
         </div>
+      </nav>
 
+      <nav class="panel">
+        <p class="panel-heading">
+          Cli
+        </p>                                                                                                                                                                    
+        <div class="panel-block">
+          <p class="control">
+            Sparrow plugins - small utilities are run via terminal or inlined in Bash/Shell - usefull for quick and dirty way scripts.
+            Plugins <a href="https://github.com/melezhik/Sparrow6/blob/master/documentation/development.md" target="_blank">development</a> is easy fun proccess powered by Sparrow SDK with support for many popular languages
+          </p>
+        </div>
+      </nav>
+
+      <nav class="panel">
+        <p class="panel-heading">
+          Raku integration
+        </p>                                                                                                                                                                    
+        <div class="panel-block">
+          <p class="control">
+            Sparrow provides <a href="https://raku.org" target="_blank">Raku</a> integration for plugins called as Raku <a href="https://github.com/melezhik/Sparrow6/blob/master/documentation/taskrunner.md" target="_blank">functions</a> - usefull for more complex scenarios
+          </p>
+        </div>
+      </nav>
+
+      <nav class="panel">
+        <p class="panel-heading">
+          Text processing
+        </p>                                                                                                                                                                    
+        <div class="panel-block">
+          <p class="control">
+            Sparrow <a href="https://github.com/melezhik/Sparrow6/blob/master/documentation/taskchecks.md" target="_blank">task checks</a> - is awk on steroids - solid replacement for hard to maintain awk/sed/grep/perl scripts to munge your data
+          </p>
+        </div>
+      </nav>
+
+      <nav class="panel">
+        <p class="panel-heading">
+          Eco system and extensions
+        </p>                                                                                                                                                                    
+        <div class="panel-block">
+          <p class="control">
+            Sparrow has rich <a href="https://github.com/melezhik/Sparrow6?tab=readme-ov-file#sparrow-eco-system" target="_blank">eco system</a> - meaning a lot of specialized extension, including Sparky/Sparrowdo - Ansible replacement (cause we all know YAML coding pain ;-)
+          </p>
+        </div>
+      </nav>
+
+      <nav class="panel">
+        <p class="panel-heading">
+          Easy to start with
+        </p>                                                                                                                                                                    
+        <div class="panel-block">
+          <p class="control">
+            You don't need to know all bits to start using Sparrow, just start with exploring some usefull <a href=/search?q=all>plugins</a> and slowly get's your hand dirty with it, you'll love it!
+          </p>
+        </div>
+      </nav>
+
+      <nav class="panel">
+        <p class="panel-heading">
+          Easy to install
+        </p>                                                                                                                                                                    
+        <div class="panel-block">
+          <table>
+            <tr>
+              <td>Eager to try it right now? here the way:<hr></td>
+            </tr>
+            <tr>
+              <td>
+                As Raku module, using zef manager<pre><code class="language-bash">zef install --/test Sparrow6</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                On Alpine Linux as native package<pre><code class="language-bash">sudo apk add \
+--no-cache --wait 120 -u \
+--repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
+raku-sparrow6</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Once Sparrow is installed, look up for plugins and try them out:<pre><code class="language-bash">export SP6_REPO=https://sparrowhub.io/repo
+s6 --index-update
+s6 --search
+s6 --plg-run apkbuild-strict@path=/path/to/apkbuild/file</code></pre>
+             </td>  
+            </tr>
+          </table>
+        </div>
       </nav>
 
       <nav class="panel">

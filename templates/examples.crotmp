@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SparrowHub - Raku Plugins for daily $work</title>
+    <link rel="stylesheet" href="https://jenil.github.io/bulmaswatch/<.theme>/bulmaswatch.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+
+  <script src="js/misc.js"></script>
+  <section class="section">
+    <div class="container">
+      <!-- Main container -->
+      <nav class="level">
+        <!-- Left side -->
+        <div class="level-left">
+          <div class="level-item">
+            <p class="subtitle is-5">
+              <strong><.plg-cnt></strong> plugins
+            </p>
+          </div>
+          <form action="/search" method="GET">
+            <div class="level-item">
+              <div class="field has-addons">
+                <p class="control">
+                  <input class="input" type="text" name="q" placeholder="Find a plugin">
+                </p>
+                <p class="control">
+                  <button class="button">
+                    Search
+                  </button>
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- Right side -->
+        <div class="level-right">
+          <p class="level-item"><a href="/">Home</a></p>
+          <p class="level-item"><strong>Examples</strong></p>
+          <p class="level-item"><a href="/search?q=all">Plugins</a></p>
+          <p class="level-item"><a href="https://github.com/melezhik/Sparrow6">Source</a></p>
+          <p class="level-item"><a href="https://sparrowdo.wordpress.com">Blog</a></p>
+        </div>
+      </nav>
+
+      <nav class="panel">
+        <p class="panel-heading">
+            Sparrow usage examples
+        </p>
+        
+        <div class="panel-block">
+              <nav class="tabs is-boxed is-fullwidth">
+                <div class="container">
+                  <ul>
+                    <li class="tab is-active" onclick="openTab(event,'Git')"><a >Git</a></li>
+                    <li class="tab" onclick="openTab(event,'CICD')"><a >CICD</a></li>
+                    <li class="tab" onclick="openTab(event,'K8s')"><a >Kubernetes</a></li>
+                    <li class="tab" onclick="openTab(event,'Azure')"><a >Azure</a></li>
+                    <li class="tab" onclick="openTab(event,'Development')"><a >Development</a></li>
+                  </ul>
+                </div>
+              </nav>
+        </div>
+
+        <div class="panel-block">
+          <p>
+            <div class="container section">
+
+              <div id="Git" class="content-tab">
+                <p>
+  Set up Git<pre><code>task-run "set git", "git-base", %(
+  email => 'melezhik@gmail.com',
+  name  => 'Alexey Melezhik',
+  config_scope => 'local',
+  set_credential_cache => 'on'
+);</code></pre><br>
+  List total commits by author (sorted by commit count)<pre><code>my %state = task-run "commits-by-authors", "git-commits-by-author";
+
+for %state%&lt;list&gt;&lt;&gt; -> $i {
+  say "author: ",$i<author>, "commits: ", $i<commits>, "email: ", $i<email>
+}</code></pre>
+                </p>
+              </div>
+
+
+              <div id="CICD" class="content-tab" style="display:none">
+                <p>
+  Aueue Azure DevOps build and wait till it finishes<pre><code>my %state = task_run "run my build", "ado-pipeline-build", %(
+  name => "WebApp",
+  variables => "foo:1 bar:2"
+  action => "run"
+);
+
+# wait till the my  build finishes
+task_run "wait my build", "ado-pipeline-build", %(
+  action => "wait",
+  build_id => %state&lt;build_id&gt;
+);</code></pre><br>
+  Run GitLab Pipeline<pre><code>task-run "pipe-run", "gitlab-run-pipeline", %(
+  debug => True,
+  project => 1001,
+  gitlab_api => "https://git.company.com/api/v4/",
+  variables => %(
+    color => "green",
+    size => "big",
+    use_salt => True
+  )
+)</code></pre>
+                </p>
+              </div>
+
+              <div id="K8s" class="content-tab" style="display:none">
+                <p>
+  Test if a k8s deployment exists and has attributes<pre><code>task-run "dpl check", "k8s-deployment-check" %(
+  name => "animals",
+  namespace => "pets",
+  cat => %(
+    command => "/usr/bin/cat",
+    args => [
+      "eat", "milk", "fish" 
+    ],
+    env => [
+      "ENABLE_LOGGING"
+    ]
+    volume-mounts => {
+      foo-bar => "/opt/foo/bar",
+    }
+  )
+);</code></pre><br>
+  Test if k8s config map exists and has entries<pre><code>task-run "cm check", "k8s-config-check", %(
+  type => "configmap",
+  name => "web-config",
+  namespace => "dashboards",
+  # check if we have admin and password entries 
+  # in config map
+  data => [
+    "note: creds for login",
+    "[admin=root]",
+    'regexp: "[password=" \S+ "]" $$',
+  ]
+);</code></pre>
+                </p>
+              </div>
+
+              <div id="Azure" class="content-tab" style="display:none">
+                <p>
+    Check that Azure KV secrets exists<pre><code>task-run "check secrets", "azure-kv-secrets-check", %(
+  name => "kv100", # the name of keyvault
+  exists => [ # these keys should exists
+    'password1',
+    'password2',
+    'db-password1',
+    'db-password2'
+  ]
+)</code></pre><br>
+  Calculate permission number for Azure Devops permissions<pre><code>task-run "permissions sum", "ado-permissions-calculator", %(
+  namespace => "Library",
+  actions => qqw{View Create}
+);</code></pre>
+                </p>
+              </div>
+
+              <div id="Development" class="content-tab" style="display:none">
+                <p>
+  Lint yaml files<pre><code>task-run "lint these files", "yaml-lint", %(
+  files => "path/to/dir/*.yaml",
+  use_python => False
+);</code></pre><br>
+  Clean up python cache files<pre><code>task-run "clean-cache", "python-helpers", %(
+  task => "clean-cache",
+  dir => [ "{%*ENV<HOME>}/.local", '/tmp/foo/' ]
+)</code></pre>
+                </p>
+              </div>
+
+
+            </div>
+
+          </p>
+
+        </div>
+
+      </nav>
+
+    </div>
+  </section>    
+  </body>
+</html>

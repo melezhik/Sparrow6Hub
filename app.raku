@@ -46,6 +46,12 @@ my $application = route {
       )
     }
 
+    get -> 'examples' {
+      template 'templates/examples.crotmp', %( 
+        theme => $theme
+      )
+    }
+
     get -> 'repo', *@path {
 
         my $allow = False;
@@ -73,38 +79,10 @@ my $application = route {
         static 'js', @path;
     }
 
-    get -> 'login', {
-
-      redirect :permanent, "https://github.com/login/oauth/authorize?client_id={%*ENV<OAUTH_CLIENT_ID>}&state={%*ENV<OAUTH_STATE>}"
-
-    }
-
-
-    get -> 'oauth2', :$state, :$code {
-
-      my $resp = await Cro::HTTP::Client.get: 'https://github.com/login/oauth/access_token',
-        headers => [
-          "Accept" => "application/json"
-        ],
-        query => { 
-          redirect_uri => "https://sparrowhub.io/oauth2",
-          client_id => %*ENV<OAUTH_CLIENT_ID>,
-          client_secret => %*ENV<OAUTH_CLIENT_SECRET>,
-          code => $code,
-          state => $state,    
-        };
-
-      my $data = await $resp.body-text();
-
-      my %data = from-json($data);
-
-      redirect :permanent, "/?authenitcated={%data<access_token>:exists}";
-       
-    } 
 }
 
 my Cro::Service $service = Cro::HTTP::Server.new:
-    :host<localhost>, :port<5000>, :$application;
+    :host(%*ENV<SPH_HOST> || "localhost"), :port(%*ENV<SPH_PORT> || 5000), :$application;
 
 $service.start;
 

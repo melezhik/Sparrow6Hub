@@ -91,7 +91,7 @@
         <div class="panel-block">
           <p class="control">
             Sparrow <a href="https://github.com/melezhik/Sparrow6/blob/master/documentation/taskchecks.md" target="_blank">task checks</a> - is awk on steroids - solid replacement for hard to maintain awk/sed/grep/perl scripts to munge your data.
-            See some Stack Overflow <a href="https://stackoverflow.com/search?q=Raku%2FSparrow" target="_blank">answers</a> refering Sparrow as a soltion.
+            See some Stack Overflow <a href="https://stackoverflow.com/search?q=Raku%2FSparrow" target="_blank">answers</a> refering Sparrow as a soltion
           </p>
         </div>
       </nav>

@@ -102,7 +102,7 @@
         </p>                                                                                                                                                                    
         <div class="panel-block">
           <p class="control">
-            Sparrow has rich <a href="https://github.com/melezhik/Sparrow6?tab=readme-ov-file#sparrow-eco-system" target="_blank">eco system</a> - meaning a lot of specialized extension, including Sparky/Sparrowdo - Ansible replacement (cause we all know YAML coding pain ;-)
+            Sparrow has rich <a href="https://github.com/melezhik/Sparrow6?tab=readme-ov-file#sparrow-eco-system" target="_blank">eco system</a> - meaning a lot of specialized extensions, including <a href="https://github.com/melezhik/sparky" target="_blank">Sparky/Sparrowdo</a> - Ansible replacement (cause we all know YAML coding pain ;-)
           </p>
         </div>
       </nav>

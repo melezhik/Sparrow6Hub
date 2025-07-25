@@ -67,8 +67,8 @@
         </p>                                                                                                                                                                    
         <div class="panel-block">
           <p class="control">
-            Sparrow plugins - small utilities are run via terminal or inlined in Bash/Shell - usefull for quick and dirty way scripts.
-            Plugins <a href="https://github.com/melezhik/Sparrow6/blob/master/documentation/development.md" target="_blank">development</a> is easy fun proccess powered by Sparrow SDK with support for many popular languages
+            Sparrow plugins - small utilities are run via terminal or inlined in Bash/Shell - usefull for quick and dirty way scripting.
+            Plugins <a href="https://github.com/melezhik/Sparrow6/blob/master/documentation/development.md" target="_blank">development</a> is easy and fun proccess powered by Sparrow SDK with support for many popular <a href="https://github.com/melezhik/Sparrow6?tab=readme-ov-file#supported-languages" target="_blank">languages</a>
           </p>
         </div>
       </nav>
@@ -134,7 +134,7 @@
             </tr>
             <tr>
               <td>
-                On Alpine Linux as native package<pre><code class="language-bash">sudo apk add \
+                On Alpine Linux as a native package:<pre><code class="language-bash">sudo apk add \
 --no-cache --wait 120 -u \
 --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
 raku-sparrow6</code></pre>
@@ -143,6 +143,7 @@ raku-sparrow6</code></pre>
             <tr>
               <td>
                 Once Sparrow is installed, look up for plugins and try them out:<pre><code class="language-bash">export SP6_REPO=https://sparrowhub.io/repo
+s6 --version
 s6 --index-update
 s6 --search alpine
 s6 --plg-run apkbuild-strict@path=/path/to/apkbuild/file</code></pre>

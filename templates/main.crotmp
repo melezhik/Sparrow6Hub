@@ -54,11 +54,17 @@
           Sparrow - Raku Automation Framework
         </p>                                                                                                                                                                    <div class="panel-block">
         <div class="panel-block">
-          <p class="control">
-            <img src="/logos/logo.png" width="20%" height="20%"><br>
-            Sparrow is your one for all swiss army knife automation toolkit, useful for devops,
-            data scientists, QA engineers and operations. Check out some quick start <a href="/examples">examples</a>
-          </p>
+            <table class=table>
+            <tr>
+              <td>
+                <img src="/logos/logo.png" width="30%" height="30%">
+              </td>
+              <td>
+                Sparrow is your one for all swiss army knife automation toolkit, useful for devops,
+                data scientists, QA engineers and operations. Check out some quick start <a href="/examples">examples</a>
+              </td>
+            </tr>
+            </table>
         </div>
       </nav>
 

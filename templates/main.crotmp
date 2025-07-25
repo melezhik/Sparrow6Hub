@@ -57,7 +57,9 @@
             <table class=table>
             <tr>
               <td>
-                <img src="/logos/logo.png" width="140" height="140">
+                <figure class="image is-128x128">
+                  <img src="/logos/logo.png">
+                </figure>
               </td>
               <td>
                 Sparrow is your one for all swiss army knife automation toolkit, useful for devops,

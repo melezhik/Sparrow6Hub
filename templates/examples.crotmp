@@ -95,13 +95,13 @@ for %state&lt;list&gt;&lt;&gt; -> $i {
                 <p>
   Setup nanorc file<pre><code class="language-bash">s6 --plg-run nano-setup</code></pre></code></pre>
                 <br>
-                Veryfy that disks are full on no more than 70 percents<pre><code>s6 --plg-run df-check@threshold=70</code></pre>
+                Verify that disks are full on no more than 70 percents<pre><code>s6 --plg-run df-check@threshold=70</code></pre>
                 </p>
               </div>
 
               <div id="CICD" class="content-tab" style="display:none">
                 <p>
-  Aueue Azure DevOps build and wait till it finishes<pre><code>my %state = task_run "run my build", "ado-pipeline-build", %(
+  Queue Azure DevOps build and wait till it finishes<pre><code>my %state = task_run "run my build", "ado-pipeline-build", %(
   name => "WebApp",
   variables => "foo:1 bar:2"
   action => "run"
@@ -203,7 +203,8 @@ task_run "wait my build", "ado-pipeline-build", %(
   identity => 'Kind'
 );
 
-say %state&lt;directory&gt;</code></pre>
+say %state&lt;directory&gt;</code></pre><br>
+  Memory Usage statistics using System::Stats::MEMUsage<pre><code>s6 --plg-run raku-utils-system-stats-mem-usage</code></pre>
                 </p>
               </div>
 

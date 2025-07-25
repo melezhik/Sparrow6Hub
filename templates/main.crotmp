@@ -152,8 +152,8 @@ sudo apk add raku-sparrow6</code></pre>
                 Once Sparrow is installed, look up for plugins and try them out<pre><code class="language-bash">export SP6_REPO=https://sparrowhub.io/repo
 s6 --version
 s6 --index-update
-s6 --search alpine
-s6 --plg-run apkbuild-strict@path=/path/to/apkbuild/file</code></pre>
+s6 --search
+s6 --plg-run df-check@threshold=70</code></pre>
              </td>  
             </tr>
           </table>

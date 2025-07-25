@@ -79,6 +79,12 @@ my $application = route {
         static 'js', @path;
     }
 
+    get -> 'logos', *@path {
+
+      cache-control :public, :max-age(3000);
+      static 'logos', @path;
+
+    }
 }
 
 my Cro::Service $service = Cro::HTTP::Server.new:

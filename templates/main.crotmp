@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SparrowHub - Raku Plugins for daily $work</title>
+    <title>Sparrow - swiss army knife automation toolkit</title>
     <link rel="stylesheet" href="https://jenil.github.io/bulmaswatch/<.theme>/bulmaswatch.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css">
@@ -55,6 +55,7 @@
         </p>                                                                                                                                                                    <div class="panel-block">
         <div class="panel-block">
           <p class="control">
+            <img src="/logos/logo.png" width="20%" height="20%"><br>
             Sparrow is your one for all swiss army knife automation toolkit, useful for devops,
             data scientists, QA engineers and operations. Check out some quick start <a href="/examples">examples</a>
           </p>

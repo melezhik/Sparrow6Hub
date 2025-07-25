@@ -57,7 +57,7 @@
             <table class=table>
             <tr>
               <td>
-                <figure class="image is-128x128">
+                <figure class="image is-128x128 is-1by1">
                   <img src="/logos/logo.png">
                 </figure>
               </td>

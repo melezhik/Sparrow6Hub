@@ -94,7 +94,7 @@ for %state&lt;list&gt;&lt;&gt; -> $i {
                 <p>
   Setup nanorc file<pre><code class="language-bash">s6 --plg-run nano-setup</code></pre></code></pre>
                 <br>
-                Veryfy that disks are full on more than 70 percents<pre><code>s6 --plg-run df-check@threshold=70</code></pre>
+                Veryfy that disks are full on no more than 70 percents<pre><code>s6 --plg-run df-check@threshold=70</code></pre>
                 </p>
               </div>
 

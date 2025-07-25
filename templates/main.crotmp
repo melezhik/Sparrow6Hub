@@ -143,13 +143,13 @@
             </tr>
             <tr>
               <td>
-                On Alpine Linux as a native package:<pre><code class="language-bash">echo https://dl-cdn.alpinelinux.org/alpine/v3.22/community | sudo tee >> /etc/apk/repositories
+                On Alpine Linux as a native package<pre><code class="language-bash">echo https://dl-cdn.alpinelinux.org/alpine/v3.22/community | sudo tee >> /etc/apk/repositories
 sudo apk add raku-sparrow6</code></pre>
               </td>
             </tr>
             <tr>
               <td>
-                Once Sparrow is installed, look up for plugins and try them out:<pre><code class="language-bash">export SP6_REPO=https://sparrowhub.io/repo
+                Once Sparrow is installed, look up for plugins and try them out<pre><code class="language-bash">export SP6_REPO=https://sparrowhub.io/repo
 s6 --version
 s6 --index-update
 s6 --search alpine

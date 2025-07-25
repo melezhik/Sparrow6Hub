@@ -134,8 +134,8 @@
             </tr>
             <tr>
               <td>
-                On Alpine Linux as a native package:<pre><code class="language-bash">echo https://dl-cdn.alpinelinux.org/alpine/v3.22/community | tee >> /etc/apk/repositories
-                sudo apk add raku-sparrow6</code></pre>
+                On Alpine Linux as a native package:<pre><code class="language-bash">echo https://dl-cdn.alpinelinux.org/alpine/v3.22/community | sudo tee >> /etc/apk/repositories
+sudo apk add raku-sparrow6</code></pre>
               </td>
             </tr>
             <tr>

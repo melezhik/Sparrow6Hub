@@ -10,9 +10,15 @@ function openTab(evt, tabName) {
   }
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " is-active";
+
 }
 
 tab = window.location.hash.replace("#", "") || "Git";
+tab = tab.replace("/", "");
 
-document.getElementById("ex" + tab).click();
+//alert(tab)
+
+if (tab != "Git") {
+  document.getElementById("ex" + tab).click();
+}
 

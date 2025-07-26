@@ -11,3 +11,8 @@ function openTab(evt, tabName) {
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " is-active";
 }
+
+tab = window.location.hash.replace("#", "") || "Git";
+
+document.getElementById("ex" + tab).click();
+

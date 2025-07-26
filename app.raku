@@ -75,7 +75,7 @@ my $application = route {
     }
 
     get -> 'js', *@path {
-        cache-control :public, :max-age(300);
+        cache-control :public, :max-age(5);
         static 'js', @path;
     }
 

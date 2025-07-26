@@ -12,7 +12,6 @@
   </head>
   <body>
 
-  <script src="js/misc.js"></script>
   <section class="section">
     <div class="container">
       <!-- Main container -->
@@ -58,14 +57,14 @@
               <nav class="tabs is-boxed is-fullwidth">
                 <div class="container">
                   <ul>
-                    <li class="tab is-active" onclick="openTab(event,'Git')"><a >Git</a></li>
-                    <li class="tab" onclick="openTab(event,'Utils')"><a >Utils</a></li>
-                    <li class="tab" onclick="openTab(event,'CICD')"><a >CICD</a></li>
-                    <li class="tab" onclick="openTab(event,'K8s')"><a >Kubernetes</a></li>
-                    <li class="tab" onclick="openTab(event,'Azure')"><a >Azure</a></li>
-                    <li class="tab" onclick="openTab(event,'Development')"><a >Development</a></li>
-                    <li class="tab" onclick="openTab(event,'Raku')"><a >Raku</a></li>
-                    <li class="tab" onclick="openTab(event,'Alpine')"><a >Alpine</a></li>
+                    <li class="tab is-active" onclick="openTab(event,'Git')"><a href="#Git" id="exGit">Git</a></li>
+                    <li class="tab" onclick="openTab(event,'Utils')"><a href="#Utils" id="exUtil">Utils</a></li>
+                    <li class="tab" onclick="openTab(event,'CICD')"><a href="#CICD" id="exCICD">CICD</a></li>
+                    <li class="tab" onclick="openTab(event,'K8s')"><a href="#K8s" id="exK8s">Kubernetes</a></li>
+                    <li class="tab" onclick="openTab(event,'Azure')"><a href="#Azure" id="exAzure">Azure</a></li>
+                    <li class="tab" onclick="openTab(event,'Development')"><a href="#Development" id="exDevelopment">Development</a></li>
+                    <li class="tab" onclick="openTab(event,'Raku')"><a href="#Raku" id="exRaku">Raku</a></li>
+                    <li class="tab" onclick="openTab(event,'Alpine')"><a href="#Alpine" id="exAlpine">Alpine</a></li>
                   </ul>
                 </div>
               </nav>
@@ -77,16 +76,18 @@
 
               <div id="Git" class="content-tab">
                 <p>
-  Set up Git<pre><code>task-run "set git", "git-base", %(
+  Set up Git repository<pre><code>task-run "set git", "git-base", %(
   email => 'melezhik@gmail.com',
   name  => 'Alexey Melezhik',
   config_scope => 'local',
   set_credential_cache => 'on'
 );</code></pre><br>
-  List total commits by author (sorted by commit count)<pre><code>my %state = task-run "commits-by-authors", "git-commits-by-author";
+  List total commits by author (sorted by commit count)<pre><code>my %state = task-run "commits by authors", "git-commits-by-author";
 
 for %state&lt;list&gt;&lt;&gt; -> $i {
-  say "author: ",$i&lt;author&gt;, "commits: ", $i&lt;commits&gt;, "email: ", $i&lt;email&gt;
+  say "author: ",$i&lt;author&gt;, 
+      "commits: ", $i&lt;commits&gt;, 
+      "email: ", $i&lt;email&gt;;
 }</code></pre>
                 </p>
               </div>
@@ -218,6 +219,7 @@ say %state&lt;directory&gt;</code></pre><br>
       </nav>
 
     </div>
-  </section>    
+  </section>
+  <script src="js/misc.js"></script>
   </body>
 </html>

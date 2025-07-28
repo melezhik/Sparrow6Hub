@@ -82,7 +82,7 @@
   config_scope => 'local',
   set_credential_cache => 'on'
 );</code></pre><br>
-  List total commits by author (sorted by commit count)<pre><code>my %state = task-run "commits by authors", "git-commits-by-author";
+  List total commits by author (sorted by commit count)<pre><code>my %state = task-run "git stat", "git-commits-by-author";
 
 for %state&lt;list&gt;&lt;&gt; -> $i {
   say "author: ",$i&lt;author&gt;, 

@@ -58,6 +58,7 @@ my $application = route {
 
         for request.headers {
             $allow = True if .name eq "User-Agent" and .value ~~ /^^ 'curl' \S*/;
+            $allow = True if .name eq "User-Agent" and .value ~~ m:i/^^ 'wget' \S*/;
         }
 
         if $allow {

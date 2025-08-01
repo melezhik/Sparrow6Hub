@@ -72,6 +72,23 @@
 
       <nav class="panel">
         <p class="panel-heading">
+          Why?
+        </p>                                                                                                                                                                    
+        <div class="panel-block">
+          <p class="control">
+            Sparrow is a lightweight automation framework that could be used as drop-in replacement 
+            to Ansible or other frameworks suffering from unnecessary complexity and extra abstraction layers. 
+            Sparrow could be an efficient glue allowing people use their preferable scripting 
+            languages (Bash/Perl/Python) while adding useful features via Sparrow SDK:<br>
+              - scripts configuration<br>
+              - testing<br>
+              - distribution<br>
+          </p>
+        </div>
+      </nav>
+
+      <nav class="panel">
+        <p class="panel-heading">
           Cli
         </p>                                                                                                                                                                    
         <div class="panel-block">

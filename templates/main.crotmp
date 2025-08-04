@@ -19,12 +19,35 @@
       <nav class="level">
         <!-- Left side -->
         <div class="level-left">
-          <div class="level-item">
+          <nav class="level-item">
+            <a href="https://sparrowhub.io/" style="display: inline-flex; align-items: center">
+              <figure>
+                <img src="/logos/logo.png" style="max-height: 48pt; max-width: 48pt">
+              </figure>
+              <span style="font-size: 24pt; font-weight: bold">Sparrow</span>
+            </a>
+          </nav>
+        </div>
+        <style>
+        .menu-item {
+          padding: 4pt 12pt;
+        }
+        </style>
+        <div class="level-item">
+          <p class="menu-item"><strong>Home</strong></p>
+          <p class="menu-item"><a href="/examples">Examples</a></p>
+          <p class="menu-item"><a href="/search?q=all">Plugins</a></p>
+          <p class="menu-item"><a href="https://github.com/melezhik/Sparrow6">Source</a></p>
+          <p class="menu-item"><a href="https://sparrowdo.wordpress.com">Blog</a></p>
+        </div>
+        <!-- Right side -->
+          <div class="level-right">
+          <div class="menu-item">
             <p class="subtitle is-5">
               <strong><.plg-cnt></strong> plugins
             </p>
           </div>
-          <form action="/search" method="GET">
+          <form action="/search" method="GET" class="menu-item">
             <div class="level-item">
               <div class="field has-addons">
                 <p class="control">
@@ -39,34 +62,87 @@
             </div>
           </form>
         </div>
-        <!-- Right side -->
-        <div class="level-right">
-          <p class="level-item"><strong>Home</strong></p>
-          <p class="level-item"><a href="/examples">Examples</a></p>
-          <p class="level-item"><a href="/search?q=all">Plugins</a></p>
-          <p class="level-item"><a href="https://github.com/melezhik/Sparrow6">Source</a></p>
-          <p class="level-item"><a href="https://sparrowdo.wordpress.com">Blog</a></p>
-        </div>
       </nav>
 
       <nav class="panel">
         <p class="panel-heading">
-          Sparrow - Raku Automation Framework
-        </p>                                                                                                                                                                    <div class="panel-block">
+          Sparrow - The Automation Framework
+        </p>
         <div class="panel-block">
-            <table class=table>
-            <tr>
-              <td>
-                <figure class="image is-128x128 is-1by1">
-                  <img src="/logos/logo.png">
-                </figure>
-              </td>
-              <td>
-                Sparrow is your one for all swiss army knife automation toolkit, useful for devops,
-                data scientists, QA engineers and operations. Check out some quick start <a href="/examples">examples</a>
-              </td>
-            </tr>
-            </table>
+          <div>
+                <p>Sparrow is your one for all swiss army knife automation toolkit, useful for devops,
+                data scientists, QA engineers and operations. Check out some quick start <a href="/examples">examples</a>.  </p>
+          <p>The Sparrow Suite is a modular framework; this means that you can select just the parts you need, and it can
+          grow with your needs.  </p>
+          </div>
+        </div>
+      </nav>
+
+      <style>
+      .panels-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        column-gap: 3%;
+      }
+      .rowhead {
+        font-weight: bold;
+      }
+      .column-spanner {
+        grid-column: 2/6;
+        text-align: center;
+      }
+      .cell {
+        box-shadow: 2pt 2pt 4pt 2pt silver;
+        border-radius: 4pt;
+        padding: 4pt 12pt;
+        margin: 6pt;
+        font-size: 12pt;
+      }
+      </style>
+      <nav class="panel">
+        <p class="panel-heading">
+          Use Cases
+        </p>
+        <div class="panel-block">
+          <div class="panels-inner">
+
+            <span></span>
+            <span class="panel-heading">Configuration Management</span>
+            <span class="panel-heading">CI/CD</span>
+            <span class="panel-heading">Testing</span>
+            <span class="panel-heading">Data Science</span>
+
+            <span class="rowhead">Script (Task) Language</span>
+            <span class="column-spanner cell">Your preferred languages, including Python, bash, Raku, Powershell, Ruby, Perl, and Golang; mixing and matching is not only possible, but normal</span>
+
+            <span class="rowhead">Cross-platform Commands</span>
+            <span class="column-spanner cell">(Optional) Sparrow DSL (in Raku) looks after the cross-platform stuff for you</span>
+
+            <span class="rowhead">Sparrowdo</span>
+            <span class="cell">(Optional) Push tasks out to hosts and run them there</span>
+            <span class="cell">???</span>
+            <span class="cell"></span>
+            <span class="cell"></span>
+
+            <span class="rowhead">Sparky (Service)</span>
+            <span class="cell">(Optional) Run a master that the minions can regularly contact for updated config</span>
+            <span class="cell">(Optional) Run a service that will run CI/CD pipelines on demand</span>
+            <span class="cell">???</span>
+            <span></span>
+
+            <span class="rowhead">Sparky (Web UI)</span>
+            <span class="cell">(Optional) Have a web UI for the master that lets you control your servers</span>
+            <span class="cell">(Optional) Have a web UI on the CI/CD server that lets you control your pipelines</span>
+            <span></span>
+            <span></span>
+
+            <span class="rowhead">Tomtit</span>
+            <span class="cell">(Optional) Run tasks locally (eg. a script that creates a cloud server, so you can bootstrap, or operate without a master)</span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+          </div>
         </div>
       </nav>
 

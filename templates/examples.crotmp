@@ -77,7 +77,7 @@
               <div id="Git" class="content-tab">
                 <p>
   Set up Git repository<pre><code>task-run "set git", "git-base", %(
-  email => 'melezhik@gmail.com',
+  :email => 'melezhik@gmail.com',
   name  => 'Alexey Melezhik',
   config_scope => 'local',
   set_credential_cache => 'on'
@@ -200,12 +200,15 @@ task_run "wait my build", "ado-pipeline-build", %(
               <div id="Raku" class="content-tab" style="display:none">
                 <p>
   Set up fez account<pre><code class="language-bash">s6 --plg-run fez-login@user=melezhik,password=superSECRET123</code></pre></code></pre><br>
-  Fetch zef distribution and return download directory<pre><code>my %state = task-run 'zef fetch Kind', 'zef-fetch', %(
+  Fetch zef distribution and return download directory<pre><code>my %state = task-run "zef fetch Kind", "zef-fetch", %(
   identity => 'Kind'
 );
 
 say %state&lt;directory&gt;</code></pre><br>
-  Memory Usage statistics using System::Stats::MEMUsage<pre><code>s6 --plg-run raku-utils-system-stats-mem-usage</code></pre>
+  Install Rakudo<pre><code>task-run "install Rakudo 2025.08", "rakudo-install", %(
+  version => "2025.08",
+  user => "alex",
+);</code></pre>
                 </p>
               </div>
 

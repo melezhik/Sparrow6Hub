@@ -62,8 +62,12 @@
                 </figure>
               </td>
               <td>
-                Sparrow is your one for all swiss army knife automation toolkit, useful for devops,
-                data scientists, QA engineers and operations. Check out some quick start <a href="/examples">examples</a>
+                Sparrow is your one for all swiss army knife automation toolkit, useful for:<br>
+                - devops and operations<br>
+                - data engineers and scientists<br>
+                - qa engineers and test automations<br>
+                ---<br>
+                Check out some quick start <a href="/examples">examples</a>
               </td>
             </tr>
             </table>
@@ -79,10 +83,15 @@
             Sparrow is a lightweight automation framework that could be used as drop-in replacement 
             to Ansible or other frameworks suffering from unnecessary complexity and extra abstraction layers. 
             Sparrow could be an efficient glue allowing people use their preferable scripting 
-            languages (Bash/Perl/Python) while adding useful features via Sparrow SDK:<br><br>
-              - scripts configuration<br>
-              - testing<br>
-              - distribution<br>
+            languages (Raku/Bash/Perl/Python/Ruby/Powershell) while adding useful features via Sparrow SDK:
+            <br>
+            ---
+            <br>
+              - tasks <strong>configuration</strong> (YAML and native programming languages support)<br>
+              - task <strong>documentation</strong> (markdown)<br>
+              - embedded <strong>testing</strong> (task check DSL) <br>
+              - tasks as <strong>libraries</strong> (plugins) <br>
+              - task <strong>distributions</strong> (plugins)<br>
           </p>
         </div>
       </nav>
@@ -165,11 +174,11 @@
             </tr>
             <tr>
               <td>
-                Plugins: search, install, run<pre><code class="language-bash">export SP6_REPO=https://sparrowhub.io/repo
-s6 --version
-s6 --index-update
-s6 --search
-s6 --plg-run df-check@threshold=70</code></pre>
+                Plugins - run as cli task<pre><code class="language-bash">s6 --plg-run df-check@threshold=70</code></pre>
+Or as Raku task:<pre><code>use Sparrow6::DSL;
+task-run "check disk", "df-check", %(
+  :70threshold,
+);</code></pre>
              </td>  
             </tr>
           </table>

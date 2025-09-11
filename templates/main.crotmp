@@ -88,10 +88,10 @@
             ---
             <br>
               - tasks <strong>configuration</strong> (YAML and native programming languages support)<br>
-              - task <strong>documentation</strong> (markdown)<br>
+              - tasks <strong>documentation</strong> (markdown)<br>
               - embedded <strong>testing</strong> (task check DSL) <br>
               - tasks as <strong>libraries</strong> (plugins) <br>
-              - task <strong>distributions</strong> (plugins)<br>
+              - tasks <strong>distributions</strong> (plugins and repositories)<br>
           </p>
         </div>
       </nav>

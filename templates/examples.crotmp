@@ -62,7 +62,7 @@
                     <li class="tab" onclick="openTab(event,'Systemd')"><a href="#Systemd/" id="exSystemd">Systemd</a></li>
                     <li class="tab" onclick="openTab(event,'K8s')"><a href="#K8s/" id="exK8s">Kubernetes</a></li>
                     <li class="tab" onclick="openTab(event,'Azure')"><a href="#Azure/" id="exAzure">Azure</a></li>
-                    <li class="tab" onclick="openTab(event,'Development')"><a href="#Development/" id="exDevelopment">Development</a></li>
+                    <li class="tab" onclick="openTab(event,'Linters')"><a href="#Linters/" id="exLinters">Linters</a></li>
                     <li class="tab" onclick="openTab(event,'Raku')"><a href="#Raku/" id="exRaku">Raku</a></li>
                     <li class="tab" onclick="openTab(event,'Alpine')"><a href="#Alpine/" id="exAlpine">Alpine</a></li>
                     <li class="tab" onclick="openTab(event,'Utils')"><a href="#Utils/" id="exUtils">Utils</a></li>
@@ -202,15 +202,16 @@ if $s<changed> {
                 </p>
               </div>
 
-              <div id="Development" class="content-tab" style="display:none">
+              <div id="Linters" class="content-tab" style="display:none">
                 <p>
-  Lint yaml files<pre><code>task-run "lint these files", "yaml-lint", %(
-  files => "path/to/dir/*.yaml",
-  use_python => False
+  Lint yaml files<pre><code>task-run "yaml lint", "yaml-lint", %(
+  :files&lt;*.yaml&gt;,
+  :!use_python,
 );</code></pre><br>
-  Clean up python cache files<pre><code>task-run "clean-cache", "python-helpers", %(
-  task => "clean-cache",
-  dir => [ "{%*ENV<HOME>}/.local", '/tmp/foo/' ]
+  Lint jinja templates<pre><code>task-run "jinja lint", "jinjalint", %(
+  args => [
+    "template-directory/*.j2",
+  ]
 )</code></pre>
                 </p>
               </div>

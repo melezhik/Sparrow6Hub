@@ -58,13 +58,14 @@
                 <div class="container">
                   <ul>
                     <li class="tab is-active" onclick="openTab(event,'Git')"><a href="#Git/" id="exGit">Git</a></li>
-                    <li class="tab" onclick="openTab(event,'Utils')"><a href="#Utils/" id="exUtils">Utils</a></li>
                     <li class="tab" onclick="openTab(event,'CICD')"><a href="#CICD/" id="exCICD">CICD</a></li>
+                    <li class="tab" onclick="openTab(event,'Systemd')"><a href="#Systemd/" id="exSystemd">Systemd</a></li>
                     <li class="tab" onclick="openTab(event,'K8s')"><a href="#K8s/" id="exK8s">Kubernetes</a></li>
                     <li class="tab" onclick="openTab(event,'Azure')"><a href="#Azure/" id="exAzure">Azure</a></li>
                     <li class="tab" onclick="openTab(event,'Development')"><a href="#Development/" id="exDevelopment">Development</a></li>
                     <li class="tab" onclick="openTab(event,'Raku')"><a href="#Raku/" id="exRaku">Raku</a></li>
                     <li class="tab" onclick="openTab(event,'Alpine')"><a href="#Alpine/" id="exAlpine">Alpine</a></li>
+                    <li class="tab" onclick="openTab(event,'Utils')"><a href="#Utils/" id="exUtils">Utils</a></li>
                   </ul>
                 </div>
               </nav>
@@ -77,10 +78,10 @@
               <div id="Git" class="content-tab">
                 <p>
   Set up Git repository<pre><code>task-run "set git", "git-base", %(
-  :email => 'melezhik@gmail.com',
-  name  => 'Alexey Melezhik',
-  config_scope => 'local',
-  set_credential_cache => 'on'
+  :email&lt;melezhik@gmail.com&gt;,
+  :name&lt;Alexey Melezhik&gt;,
+  :config_scope&lt;local&gt;,
+  :set_credential_cache&lt;on&gt;
 );</code></pre><br>
   List total commits by author (sorted by commit count)<pre><code>my %state = task-run "git stat", "git-commits-by-author";
 
@@ -89,14 +90,6 @@ for %state&lt;list&gt;&lt;&gt; -> $i {
       "commits: ", $i&lt;commits&gt;, 
       "email: ", $i&lt;email&gt;;
 }</code></pre>
-                </p>
-              </div>
-
-              <div id="Utils" class="content-tab" style="display:none">
-                <p>
-  Setup nanorc file<pre><code class="language-bash">s6 --plg-run nano-setup</code></pre></code></pre>
-                <br>
-                Verify that disks are full on no more than 70 percents<pre><code>s6 --plg-run df-check@threshold=70</code></pre>
                 </p>
               </div>
 
@@ -114,15 +107,47 @@ task_run "wait my build", "ado-pipeline-build", %(
   build_id => %state&lt;build_id&gt;
 );</code></pre><br>
   Run GitLab Pipeline<pre><code>task-run "pipe-run", "gitlab-run-pipeline", %(
-  debug => True,
-  project => 1001,
-  gitlab_api => "https://git.company.com/api/v4/",
+  :debug,
+  :1001project,
+  :gitlab_api&lt;https://git.company.com/api/v4/&gt;,
   variables => %(
-    color => "green",
-    size => "big",
-    use_salt => True
+    :color&lt;green&gt;,
+    :size&lt;big&gt;,
+    :dev_mode
   )
 )</code></pre>
+                </p>
+              </div>
+
+              <div id="Systemd" class="content-tab" style="display:none">
+                <p>
+  Installs systemd unit for service<pre><code>my $s = task-run "container deploy service", "systemd-service-unit", %(
+  :description&lt;container-deploy&gt;,
+  :name&lt;container-deploy&gt;,
+  :type&lt;oneshot&gt;,
+  environment => ["HOME=/root", "GOCACHE=/tmp/go-cache", "GOPATH=/tmp/go"],
+  :environment_file&lt;/etc/default/container-deploy&gt;,
+  exec_start => "/usr/bin/go run /usr/local/bin/container-deploy.go",
+);
+
+if $s<changed> {
+  bash "systemctl daemon-reload";
+}
+</code></pre><br>
+  Install systemd unit for timer<pre><code>my $s = task-run "my timer", "systemd-timer-unit",  %(
+  :description&lt;Container Deploy Timer&gt;,
+  :name&lt;container-deploy&gt;,
+  :requires&lt;container-deploy.service&gt;,
+  :on_boot_sec&lt;5min&gt;,
+  :on_unit_active_sec&lt;3min&gt;,
+  :randomized_delay_sec&lt;1min&gt;,
+  :accuracy_sec&lt;2min&gt;,
+);
+
+if $s<changed> {
+  bash "systemctl daemon-reload";
+  service-enable "container-deploy.timer";
+}</code></pre>
                 </p>
               </div>
 
@@ -212,6 +237,13 @@ say %state&lt;directory&gt;</code></pre><br>
                 </p>
               </div>
 
+              <div id="Utils" class="content-tab" style="display:none">
+                <p>
+  Setup nanorc file<pre><code class="language-bash">s6 --plg-run nano-setup</code></pre></code></pre>
+                <br>
+                Verify that disks are full on no more than 70 percents<pre><code>s6 --plg-run df-check@threshold=70</code></pre>
+                </p>
+              </div>
 
             </div>
 

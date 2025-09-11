@@ -48,7 +48,8 @@ my $application = route {
 
     get -> 'examples' {
       template 'templates/examples.crotmp', %( 
-        theme => $theme
+        theme => $theme,
+        plg-cnt => plugins-cnt,
       )
     }
 

@@ -63,6 +63,7 @@
                     <li class="tab" onclick="openTab(event,'Podman')"><a href="#Podman/" id="exPodman">Podman</a></li>
                     <li class="tab" onclick="openTab(event,'K8s')"><a href="#K8s/" id="exK8s">Kubernetes</a></li>
                     <li class="tab" onclick="openTab(event,'Azure')"><a href="#Azure/" id="exAzure">Azure</a></li>
+                    <li class="tab" onclick="openTab(event,'Aws')"><a href="#Aws/" id="exAws">Aws</a></li>
                     <li class="tab" onclick="openTab(event,'Linters')"><a href="#Linters/" id="exLinters">Linters</a></li>
                     <li class="tab" onclick="openTab(event,'Raku')"><a href="#Raku/" id="exRaku">Raku</a></li>
                     <li class="tab" onclick="openTab(event,'Alpine')"><a href="#Alpine/" id="exAlpine">Alpine</a></li>
@@ -232,6 +233,19 @@ service-start "my-app\@feature-foo";</code></pre>
   namespace => "Library",
   actions => ["View", "Create"]
 );</code></pre>
+                </p>
+              </div>
+
+              <div id="Aws" class="content-tab" style="display:none">
+                <p>
+    Create ec2 instance<pre><code>task-run "create ec2", "aws-ec2", %(
+  :action&lt;create&gt;,
+  :name&lt;node0&gt;,
+  :image&lt;ami-0e322da50e0e90e21&gt;,
+  :type&lt;t2.micro&gt;,
+  :subnet_id&lt;foobarbaz&gt;,
+);</code></pre><br>
+   Show ec2 instance info in human readable format<pre><code class="language-bash">s6 --plg-run aws-show-instance@id=bla_bla_bla</code></pre>
                 </p>
               </div>
 

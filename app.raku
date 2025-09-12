@@ -53,6 +53,20 @@ my $application = route {
       )
     }
 
+    get -> 'news' {
+      template 'templates/news.crotmp', %( 
+        plg-cnt => plugins-cnt,
+        theme => $theme
+      )
+    }
+
+    get -> 'components' {
+      template 'templates/components.crotmp', %( 
+        plg-cnt => plugins-cnt,
+        theme => $theme
+      )
+    }
+
     get -> 'repo', *@path {
 
         my $allow = False;

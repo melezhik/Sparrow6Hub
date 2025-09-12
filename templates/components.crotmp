@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sparrow - swiss army knife automation toolkit</title>
+    <link rel="stylesheet" href="https://jenil.github.io/bulmaswatch/<.theme>/bulmaswatch.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+
+  <script src="js/misc.js"></script>
+  <section class="section">
+    <div class="container">
+      <!-- Main container -->
+      <nav class="level">
+        <!-- Left side -->
+        <div class="level-left">
+          <div class="level-item">
+            <p class="subtitle is-5">
+              <strong><.plg-cnt></strong> plugins
+            </p>
+          </div>
+          <form action="/search" method="GET">
+            <div class="level-item">
+              <div class="field has-addons">
+                <p class="control">
+                  <input class="input" type="text" name="q" placeholder="Find a plugin">
+                </p>
+                <p class="control">
+                  <button class="button">
+                    Search
+                  </button>
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- Right side -->
+        <div class="level-right">
+          <p class="level-item"><a href="/">Home</a></p>
+          <p class="level-item"><a href="/examples">Examples</a></p>
+          <p class="level-item"><a href="/search?q=all">Plugins</a></p>
+          <p class="level-item"><strong>Components</strong></p>
+          <p class="level-item"><a href="/news">News</a></p>
+        </div>
+      </nav>
+
+      <nav class="panel">
+        <p class="panel-heading">
+          Sparrow - Components
+        </p>                                                                                                                                                                    <div class="panel-block">
+        <div class="panel-block">
+            <table class=table>
+              <tr>
+                <th>
+                  Product
+                </th>
+                <th>
+                  Context
+                </th>
+                <th>
+                  Language(s)
+                </th>
+                <th>
+                  Main artifact
+                </th>
+                <th>
+                  API
+                </th>
+                <th>
+                  Depends on
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://github.com/melezhik/Sparrow6">Sparrow6</a>
+                </td>
+                <td>
+                  Sparrow tasks runtime and SDK
+                </td>
+                <td>
+                  Raku, Python, Perl, Ruby, Powershell, Bash, Go
+                </td>
+                <td>
+                  task.*, task-run()
+                </td>
+                <td>
+                  Raku or cli
+                </td>
+                <td>
+                  Raku + zef modules
+                </td>
+              </tr>  
+              <tr>
+                <td>
+                  <a href="https://github.com/melezhik/Tomtit">Tomtit</a>
+                </td>
+                <td>
+                  Runs Sparrow tasks from local folder (CWD), makefile replacement
+                </td>
+                <td>
+                  Raku
+                </td>
+                <td>
+                  tomit scenario (.tom/foo.raku)
+                </td>
+                <td>
+                  Raku or cli
+                </td>
+                <td>
+                  Sparrow6
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://github.com/melezhik/Tomty">Tomty</a>
+                </td>
+                <td>
+                  Runs Sparrow tasks as tests from local folder (CWD), Raku
+                </td>
+                <td>
+                  Raku
+                </td>
+                <td>
+                  tomty scenario (.tomty/foo-test.raku)
+                </td>
+                <td>
+                  Raku or cli
+                </td>
+                <td>
+                  Sparrow6
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://github.com/melezhik/Bird">Bird</a>
+                </td>
+                <td>
+                  Runs Sparrow tasks as host validation rules from local folder (CWD) against remote hosts over ssh
+                </td>
+                <td>
+                  Raku
+                </td>
+                <td>
+                  bird rules file (rules.raku)
+                </td>
+                <td>
+                  Raku or cli
+                </td>
+                <td>
+                  Sparrow6
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://github.com/melezhik/Sparrowdo">Sparrowdo</a>
+                </td>
+                <td>
+                  Runs Sparrow tasks remotely, on docker or localhost
+                </td>
+                <td>
+                  Raku
+                </td>
+                <td>
+                  sparrowdo scenario (sparrowfile)
+                </td>
+                <td>
+                  Raku, cli
+                </td>
+                <td>
+                  Sparrow6
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://github.com/melezhik/Sparky">Sparky</a>
+                </td>
+                <td>
+                  Runs Sparrowdo scenarios remotely, on docker or localhost triggered by CI logic or HTTP requests, multi nodes support where one node may trigger scenario on another , etc
+                </td>
+                <td>
+                  Raku
+                </td>
+                <td>
+                  sparky project (~/.spraky/projects/foo/*)
+                </td>
+                <td>
+                  Raku+YAML
+                </td>
+                <td>
+                  Sparrowdo
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://github.com/melezhik/sparrowform">Sparrowform</a>
+                </td>
+                <td>
+                  Sparrowdo provision for Terraform backed instances.
+                </td>
+                <td>
+                  Raku
+                </td>
+                <td>
+                  sparrowdo scenario (sparrowfile)
+                </td>
+                <td>
+                  Raku, cli
+                </td>
+                <td>
+                  Sparrowdo
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://github.com/melezhik/Cromtit">Cromtit</a>
+                </td>
+                <td>
+                  Runs Sparky scenarios as distrubuted jobs in Sparky cluster
+                </td>
+                <td>
+                  Raku
+                </td>
+                <td>
+                  cromtit project (jobs.yaml)
+                </td>
+                <td>
+                  YAML, cli
+                </td>
+                <td>
+                  Sparky
+                </td>
+              </tr>
+            </table>
+        </div>
+      </nav>
+    </div>
+  </section>    
+  </body>
+</html>

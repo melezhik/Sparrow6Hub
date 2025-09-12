@@ -40,8 +40,8 @@
           <p class="level-item"><a href="/">Home</a></p>
           <p class="level-item"><a href="/examples">Examples</a></p>
           <p class="level-item"><strong>Plugins</strong></p>
-          <p class="level-item"><a href="https://github.com/melezhik/Sparrow6">Source</a></p>
-          <p class="level-item"><a href="https://sparrowdo.wordpress.com">Blog</a></p>
+          <p class="level-item"><a href="/components">Components</a></p>
+          <p class="level-item"><a href="/news">News</a></p>
         </div>
       </nav>
         <table class="table">

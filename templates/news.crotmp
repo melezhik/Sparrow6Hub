@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sparrow - swiss army knife automation toolkit</title>
+    <link rel="stylesheet" href="https://jenil.github.io/bulmaswatch/<.theme>/bulmaswatch.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+
+  <script src="js/misc.js"></script>
+  <section class="section">
+    <div class="container">
+      <!-- Main container -->
+      <nav class="level">
+        <!-- Left side -->
+        <div class="level-left">
+          <div class="level-item">
+            <p class="subtitle is-5">
+              <strong><.plg-cnt></strong> plugins
+            </p>
+          </div>
+          <form action="/search" method="GET">
+            <div class="level-item">
+              <div class="field has-addons">
+                <p class="control">
+                  <input class="input" type="text" name="q" placeholder="Find a plugin">
+                </p>
+                <p class="control">
+                  <button class="button">
+                    Search
+                  </button>
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- Right side -->
+        <div class="level-right">
+          <p class="level-item"><a href="/">Home</a></p>
+          <p class="level-item"><a href="/examples">Examples</a></p>
+          <p class="level-item"><a href="/search?q=all">Plugins</a></p>
+          <p class="level-item"><a href="/components">Components</a></p>
+          <p class="level-item"><strong>News</strong></p>
+        </div>
+      </nav>
+
+      <nav class="panel">
+        <p class="panel-heading">
+          Sparrow - Posts, Blogs, News
+        </p>                                                                                                                                                                    <div class="panel-block">
+        <div class="panel-block">
+            <table class=table>
+              <tr>
+                <th>
+                  Date
+                </th>
+                <th>
+                  News
+                </th>
+              </tr>
+              <tr><td><a href="https://programming.dev/post/36699661">09/04/2025</a></td><td>How to pass sensitive data to sparrowdo scenario</td></tr>
+              <tr><td><a href="https://github.com/melezhik/Sparrow6/blob/master/posts/CliAppDevelopement.md">08/01/2025</a></td><td>Quick start tutorial on Sparrow automation framework. How to quickly develop CLI utils using Bash and Sparrow</td></tr>
+              <tr><td><a href="https://sparrowdo.wordpress.com/2025/02/03/sparrow-whirl-of-generators/">03/02/2025</a></td><td>Sparrow – whirl of generators</td></tr>
+              <tr><td><a href="https://dev.to/melezhik/validating-config-files-with-raku-and-sparrow-taskcheck-dsl-1ekp">01/30/2025</a></td><td>Validating configuration files with Raku and Sparrow Task::Check DSL</td></tr>
+              <tr><td><a href="https://dev.to/melezhik/useful-terminal-plugins-to-build-golang-code-gj0">24/01/2025</a></td><td>Useful terminal plugins to build golang code</td></tr>
+              <tr><td><a href="https://dev.to/melezhik/simple-find-in-source-code-with-tomtit-and-sparrow-312">23/01/2025</a></td><td>Simple search in source code with Tomtit and Sparrow</td></tr>
+              <tr><td><a href="https://dev.to/melezhik/developing-a-simple-sparrow-plugin-with-raku-and-bash-51g0">20/01/2025</a></td><td>Developing a simple Sparrow plugin with Raku and Bash</td></tr>
+              <tr><td><a href="https://dev.to/melezhik/go-pipelines-with-raku-interfaces-j7o">05/11/2024</a></td><td>Go pipelines with Raku interfaces</td></tr>
+              <tr><td><a href="https://dev.to/melezhik/oh-my-tomtit-alternative-to-oh-my-zshell-written-on-raku-4oc5">08/19/2021</a></td><td>Oh my Tomtit - alternative to oh my zsh written on Raku</td></tr>
+              <tr><td><a href="https://dev.to/melezhik/sparrow-plugin-to-run-gitlab-pipelines-programmatically-5113">08/16/2021</a></td><td>Sparrow plugin to run gitlab pipelines programmatically</td></tr>
+              <tr><td><a href="https://dev.to/melezhik/bird-raku-dsl-for-infrastructure-testing-1hph">08/13/2021</a></td><td>Bird - Raku DSL for infrastructure testing</td></tr>
+              <tr><td><a href="https://dev.to/melezhik/validating-k8s-deployments-using-sparrow-5f3f">07/26/2021</a></td><td>Validating k8s deployments using Sparrow</td></tr>
+              <tr><td><a href="https://conf.raku.org/talk/164">08/07/2021</a></td><td>5 minutes introduction into Sparrow, 5 minutes introduction into Bird. RakuConf. Youtube presentation</td></tr>
+              <tr><td><a href="https://dev.to/melezhik/sparrow-plugin-to-convert-markdown-to-pdf-4k9p">07/22/2021</a></td><td>Sparrow plugin to convert markdown to pdf</td></tr>
+              <tr><td><a href="https://dev.to/melezhik/write-devopsish-tests-using-tomty-and-raku-2fl2">07/04/2021</a></td><td>Write devopsish tests using Tomty and Raku</td></tr>
+              <tr><td><a href="https://github.com/melezhik/r3tool/wiki/Baking-Rakudo-Releases-With-R3">28/06/2021</a></td><td>Baking Rakudo Releases With R3</td></tr>
+              <tr><td><a href="https://sparrowdo.wordpress.com/2020/12/15/sparky-on-k8s-cluster/">12/15/2020</a></td><td>Sparky on k8s cluster.</td></tr>
+              <tr><td><a href="https://raku-advent.blog/2020/12/07/mixing-bash-and-raku-using-sparrow/">12/07/2020</a></td><td>Day 7: Mixing Bash and Raku Using Sparrow</td></tr>
+              <tr><td><a href="https://dev.to/melezhik/sparrowdo-ubiquitous-asynchronous-task-runner-with-nice-frontend-5c1k">11/10/2020</a></td><td>Sparrowdo - Ubiquitous Asynchronous Task Runner ( with Nice Frontend )</td></tr>
+              <tr><td><a href="https://dev.to/melezhik/development-workflow-management-using-tomtit-44m4">10/05/2020</a></td><td>Development workflow management using Tomtit</td></tr>
+              <tr><td><a href="https://dev.to/melezhik/sparrowhub-io-repository-of-devops-and-automation-utilities-4mk8">09/28/2020</a></td><td>Sparrowhub.io - repository of devops and automation utilities</td></tr>
+              <tr><td><a href="https://dev.to/melezhik/simple-blackbox-testing-with-raku-and-sparrow6-g32">12/24/2019</a></td><td>Simple blackbox testing with Raku and Sparrow6</td></tr>
+            </table>
+        </div>
+      </nav>
+    </div>
+  </section>    
+  </body>
+</html>

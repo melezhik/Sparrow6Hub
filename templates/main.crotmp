@@ -44,8 +44,8 @@
           <p class="level-item"><strong>Home</strong></p>
           <p class="level-item"><a href="/examples">Examples</a></p>
           <p class="level-item"><a href="/search?q=all">Plugins</a></p>
-          <p class="level-item"><a href="https://github.com/melezhik/Sparrow6">Source</a></p>
-          <p class="level-item"><a href="https://sparrowdo.wordpress.com">Blog</a></p>
+          <p class="level-item"><a href="/components">Components</a></p>
+          <p class="level-item"><a href="/news">News</a></p>
         </div>
       </nav>
 
@@ -137,7 +137,7 @@
         </p>                                                                                                                                                                    
         <div class="panel-block">
           <p class="control">
-            Sparrow has rich <a href="https://github.com/melezhik/Sparrow6?tab=readme-ov-file#sparrow-eco-system" target="_blank">eco system</a> - meaning a lot of specialized extensions, including <a href="https://github.com/melezhik/sparky" target="_blank">Sparky/Sparrowdo</a> - Ansible replacement (cause we all know YAML coding pain ;-)
+            Sparrow has rich <a href="/components">eco system</a> - meaning a lot of specialized extensions, including <a href="https://github.com/melezhik/sparky" target="_blank">Sparky/Sparrowdo</a> - Ansible replacement (cause we all know YAML coding pain ;-)
           </p>
         </div>
       </nav>

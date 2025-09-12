@@ -43,8 +43,8 @@
           <p class="level-item"><a href="/">Home</a></p>
           <p class="level-item"><strong>Examples</strong></p>
           <p class="level-item"><a href="/search?q=all">Plugins</a></p>
-          <p class="level-item"><a href="https://github.com/melezhik/Sparrow6">Source</a></p>
-          <p class="level-item"><a href="https://sparrowdo.wordpress.com">Blog</a></p>
+          <p class="level-item"><a href="/components">Components</a></p>
+          <p class="level-item"><a href="/news">News</a></p>
         </div>
       </nav>
 
@@ -60,6 +60,7 @@
                     <li class="tab is-active" onclick="openTab(event,'Git')"><a href="#Git/" id="exGit">Git</a></li>
                     <li class="tab" onclick="openTab(event,'CICD')"><a href="#CICD/" id="exCICD">CICD</a></li>
                     <li class="tab" onclick="openTab(event,'Systemd')"><a href="#Systemd/" id="exSystemd">Systemd</a></li>
+                    <li class="tab" onclick="openTab(event,'Podman')"><a href="#Podman/" id="exPodman">Podman</a></li>
                     <li class="tab" onclick="openTab(event,'K8s')"><a href="#K8s/" id="exK8s">Kubernetes</a></li>
                     <li class="tab" onclick="openTab(event,'Azure')"><a href="#Azure/" id="exAzure">Azure</a></li>
                     <li class="tab" onclick="openTab(event,'Linters')"><a href="#Linters/" id="exLinters">Linters</a></li>
@@ -150,6 +151,38 @@ if $s<changed> {
 }</code></pre>
                 </p>
               </div>
+
+
+
+              <div id="Podman" class="content-tab" style="display:none">
+                <p>
+  Create simple sleep service, using quadlet generator<pre><code>my $s = task-run "sleep service", "quadlet-resource", %(
+  :type&lt;container&gt;,
+  :!templated,
+  :description&lt;my sleep&gt;,
+  :name&lt;mysleep&gt;,
+  :containername&lt;mysleep&gt;,
+  :hostname(""),
+  :image&lt;registry.access.redhat.com/ubi9-minimal:latest&gt;,
+  :exec&lt;sleep 1000&gt;,
+);
+
+if $s<changed> {
+  bash "systemctl daemon-reload";
+  service-start "mysleep";
+}</code></pre><br>
+  Deploy new version of container based on container template<pre><code>my $s = task-run "app deploy", "quadlet-container-deploy", %(
+  :name&lt;my-app&gt;,
+  :version&lt;feature-foo&gt;,
+);
+
+bash "systemctl daemon-reload";
+
+service-start "my-app\@feature-foo";</code></pre>
+                </p>
+              </div>
+
+
 
               <div id="K8s" class="content-tab" style="display:none">
                 <p>

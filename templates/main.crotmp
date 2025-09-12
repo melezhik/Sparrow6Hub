@@ -184,38 +184,6 @@ task-run "check disk", "df-check", %(
           </table>
         </div>
       </nav>
-
-      <nav class="panel">
-        <p class="panel-heading">
-          News
-        </p>
-        <div class="panel-block">
-            <p class="control">
-              <a href="https://programming.dev/post/36699661">09/04/2025</a> - How to pass sensitive data to sparrowdo scenario
-              <a href="https://github.com/melezhik/Sparrow6/blob/master/posts/CliAppDevelopement.md">08/01/2025</a> - Quick start tutorial on Sparrow automation framework. How to quickly develop CLI utils using Bash and Sparrow
-              <a href="https://sparrowdo.wordpress.com/2025/02/03/sparrow-whirl-of-generators/">03/02/2025</a> - Sparrow – whirl of generators
-              <a href="https://dev.to/melezhik/validating-config-files-with-raku-and-sparrow-taskcheck-dsl-1ekp">01/30/2025</a> - Validating configuration files with Raku and Sparrow Task::Check DSL
-              <a href="https://dev.to/melezhik/useful-terminal-plugins-to-build-golang-code-gj0">24/01/2025</a> - Useful terminal plugins to build golang code 
-              <a href="https://dev.to/melezhik/simple-find-in-source-code-with-tomtit-and-sparrow-312">23/01/2025</a> - Simple search in source code with Tomtit and Sparrow
-              <a href="https://dev.to/melezhik/developing-a-simple-sparrow-plugin-with-raku-and-bash-51g0">20/01/2025</a> - Developing a simple Sparrow plugin with Raku and Bash
-              <a href="https://dev.to/melezhik/go-pipelines-with-raku-interfaces-j7o">05/11/2024</a> - Go pipelines with Raku interfaces
-              <a href="https://dev.to/melezhik/oh-my-tomtit-alternative-to-oh-my-zshell-written-on-raku-4oc5">08/19/2021</a> - Oh my Tomtit - alternative to oh my zsh written on Raku 
-              <a href="https://dev.to/melezhik/sparrow-plugin-to-run-gitlab-pipelines-programmatically-5113">08/16/2021</a> - Sparrow plugin to run gitlab pipelines programmatically 
-              <a href="https://dev.to/melezhik/bird-raku-dsl-for-infrastructure-testing-1hph">08/13/2021</a> - Bird - Raku DSL for infrastructure testing 
-              <a href="https://conf.raku.org/talk/164">08/07/2021</a> - 5 minutes introduction into Sparrow , 5 minutes introduction into Bird. RakuConf. Youtube presentation.
-              <a href="https://dev.to/melezhik/validating-k8s-deployments-using-sparrow-5f3f">07/26/2021</a> - Validating k8s deployments using Sparrow.
-              <a href="https://dev.to/melezhik/sparrow-plugin-to-convert-markdown-to-pdf-4k9p">07/22/2021</a> - Sparrow plugin to convert markdown to pdf.
-              <a href="https://dev.to/melezhik/write-devopsish-tests-using-tomty-and-raku-2fl2">07/04/2021</a> - Write devopsish tests using Tomty and Raku.
-              <a href="https://github.com/melezhik/r3tool/wiki/Baking-Rakudo-Releases-With-R3">28/06/2021</a> - Baking Rakudo Releases With R3
-              <a href="https://sparrowdo.wordpress.com/2020/12/15/sparky-on-k8s-cluster/">12/15/2020</a> - Sparky on k8s cluster.
-              <a href="https://raku-advent.blog/2020/12/07/mixing-bash-and-raku-using-sparrow/">12/07/2020</a> - Day 7: Mixing Bash and Raku Using Sparrow
-              <a href="https://dev.to/melezhik/sparrowdo-ubiquitous-asynchronous-task-runner-with-nice-frontend-5c1k">11/10/2020</a> - Sparrowdo - Ubiquitous Asynchronous Task Runner ( with Nice Frontend ).
-              <a href="https://dev.to/melezhik/development-workflow-management-using-tomtit-44m4">10/05/2020</a> - Development workflow management using Tomtit. 
-              <a href="https://dev.to/melezhik/sparrowhub-io-repository-of-devops-and-automation-utilities-4mk8">09/28/2020</a> - Sparrowhub.io - repository of devops and automation utilities.
-              <a href="https://dev.to/melezhik/simple-blackbox-testing-with-raku-and-sparrow6-g32">12/24/2019</a> - Simple blackbox testing with Raku and Sparrow6
-            </p>
-        </div>
-      </nav>
     </div>
   </section>    
   </body>

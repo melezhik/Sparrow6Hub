@@ -63,6 +63,7 @@
                   News
                 </th>
               </tr>
+              <tr><td><a href="https://github.com/melezhik/Sparrow6/blob/master/posts/DataPipelines.md">09/15/2025</a></td><td>Data pipelines with Rakulang and Sparky</td></tr>
               <tr><td><a href="https://programming.dev/post/36699661">09/04/2025</a></td><td>How to pass sensitive data to sparrowdo scenario</td></tr>
               <tr><td><a href="https://github.com/melezhik/Sparrow6/blob/master/posts/CliAppDevelopement.md">08/01/2025</a></td><td>Quick start tutorial on Sparrow automation framework. How to quickly develop CLI utils using Bash and Sparrow</td></tr>
               <tr><td><a href="https://sparrowdo.wordpress.com/2025/02/03/sparrow-whirl-of-generators/">03/02/2025</a></td><td>Sparrow – whirl of generators</td></tr>

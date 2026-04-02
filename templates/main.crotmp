@@ -102,8 +102,8 @@
         </p>                                                                                                                                                                    
         <div class="panel-block">
           <p class="control">
-            Sparrow plugins - small utilities are run via terminal or inlined in Bash/Shell - usefull for quick and dirty way scripting.
-            Plugins <a href="https://github.com/melezhik/Sparrow6/blob/master/documentation/development.md" target="_blank">development</a> is easy and fun proccess powered by Sparrow SDK with support for many popular <a href="https://github.com/melezhik/Sparrow6?tab=readme-ov-file#supported-languages" target="_blank">languages</a>
+            Sparrow plugins - small utilities are run via terminal or inlined in Bash/Shell - useful for quick and dirty way scripting.
+            Plugins <a href="https://github.com/melezhik/Sparrow6/blob/master/documentation/development.md" target="_blank">development</a> is easy and fun process powered by Sparrow SDK with support for many popular <a href="https://github.com/melezhik/Sparrow6?tab=readme-ov-file#supported-languages" target="_blank">languages</a>
           </p>
         </div>
       </nav>
@@ -114,7 +114,7 @@
         </p>                                                                                                                                                                    
         <div class="panel-block">
           <p class="control">
-            Sparrow provides <a href="https://raku.org" target="_blank">Raku</a> integration for plugins called as Raku <a href="https://github.com/melezhik/Sparrow6/blob/master/documentation/taskrunner.md" target="_blank">functions</a> - usefull for more complex scenarios
+            Sparrow provides <a href="https://raku.org" target="_blank">Raku</a> integration for plugins called as Raku <a href="https://github.com/melezhik/Sparrow6/blob/master/documentation/taskrunner.md" target="_blank">functions</a> - useful for more complex scenarios
           </p>
         </div>
       </nav>
@@ -125,8 +125,8 @@
         </p>                                                                                                                                                                    
         <div class="panel-block">
           <p class="control">
-            Sparrow <a href="https://github.com/melezhik/Sparrow6/blob/master/documentation/taskchecks.md" target="_blank">task checks</a> - is awk on steroids - solid replacement for hard to maintain awk/sed/grep/perl scripts to munge your data.
-            See some Stack Overflow <a href="https://stackoverflow.com/search?q=Raku%2FSparrow" target="_blank">answers</a> refering Sparrow as a soltion
+            Sparrow <a href="https://github.com/melezhik/Sparrow6/blob/master/documentation/taskchecks.md" target="_blank">task checks</a> - is awk on steroids - solid replacement for hard to maintain awk/sed/grep/perl scripts to mung your data.
+            See some Stack Overflow <a href="https://stackoverflow.com/search?q=Raku%2FSparrow" target="_blank">answers</a> referring Sparrow as a solution
           </p>
         </div>
       </nav>
@@ -148,7 +148,7 @@
         </p>                                                                                                                                                                    
         <div class="panel-block">
           <p class="control">
-            You don't need to know all bits to start using Sparrow, just start with exploring some usefull <a href=/search?q=all>plugins</a> and slowly get's your hand dirty with it, you'll love it!
+            You don't need to know all bits to start using Sparrow, just start with exploring some useful <a href=/search?q=all>plugins</a> and slowly get your hands dirty with it, you'll love it!
           </p>
         </div>
       </nav>

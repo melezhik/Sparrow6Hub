@@ -52,7 +52,7 @@
       <nav class="panel">
         <p class="panel-heading">
           Sparrow - Raku Automation Framework
-        </p>                                                                                                                                                                    <div class="panel-block">
+        </p>
         <div class="panel-block">
             <table class=table>
             <tr>
@@ -77,7 +77,7 @@
       <nav class="panel">
         <p class="panel-heading">
           Why?
-        </p>                                                                                                                                                                    
+        </p>
         <div class="panel-block">
           <p class="control">
             Sparrow is a lightweight automation framework that could be used as drop-in replacement 

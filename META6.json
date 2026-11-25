@@ -6,7 +6,10 @@
   "build-depends" : [ ],
   "depends" : [
     "YAMLish",
-    "JSON::Tiny"
+    "JSON::Tiny",
+    "Cro::HTTP::Router",
+    "Cro::WebApp::Template",
+    "Cro::HTTP::Client"
   ],
   "description" : "SparrowHub Repository",
   "license" : "Artistic-2.0",
